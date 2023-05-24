@@ -1,12 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const answer = localStorage.getItem('userName');
   const userNameElement = document.getElementById('userName');
   const nameInput = document.getElementById('nameInput');
+  const storedUserName = localStorage.getItem('userName');
   const nextButton = document.getElementById('nextButton');
   const messageContainer = document.createElement('div');
   const pictures = document.querySelectorAll('.picture');
-  
   messageContainer.classList.add('message-container');
+
+
+  if (storedUserName) {
+    userNameElement.textContent = storedUserName;
+  }
 
   nameInput.addEventListener('input', function() {
     if (nameInput.value.trim() !== '') {
@@ -16,9 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  if (answer) {
-    userNameElement.textContent = answer;
-  }
+
   
   nameInput.addEventListener('keyup', function(event) {
     if (event.key === 'Enter') {
