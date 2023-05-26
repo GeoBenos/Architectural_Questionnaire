@@ -4,6 +4,18 @@ body {
     font-family: 'Apercu', sans-serif;
   }
   
+  .progress-bar{
+    background-color: #ccc;
+    height: 10px;
+    margin-bottom: 20px;
+  }
+
+  .progress{
+    background-color: #2e475d;
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
   .container {
     max-width: 800px;
     margin: 0 auto;

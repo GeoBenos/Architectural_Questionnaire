@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const userNameElement = document.getElementById('userName');
-    const StoredUserName = localStorage.getItem('userName');
+    // const userName = document.getElementById('userName');
+    // const StoredUserName = localStorage.getItem('userName');
     const nameInput = document.getElementById('nameInput');
     const nextButton = document.getElementById('nextButton');
     const messageContainer = document.createElement('div');
   
     messageContainer.classList.add('message-container');
   
-    if (StoredUserName !== null && StoredUserName !== '') {
-      userNameElement.textContent = StoredUserName;
-      nextButton.disabled = false; // Enable the next button if username is stored
-    }
+    // if (StoredUserName !== null && StoredUserName !== '') {
+    //   userName.textContent = StoredUserName;
+    //   nextButton.disabled = false; // Enable the next button if username is stored
+    // }
   
     nameInput.addEventListener('input', function() {
       if (nameInput.value.trim() !== '') {
@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (nameInput.value.trim() === '') {
           displayMessage('Please enter your name.');
         } else {
+          const userName = nameInput.value.trim();
+          localStorage.setItem('userName', userName);
           window.location.href = 'second_page.html';
         }
       }

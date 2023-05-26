@@ -4,11 +4,19 @@ document.addEventListener('DOMContentLoaded', function() {
   const nextButton = document.getElementById('nextButton');
   const scrollIndicators = document.querySelectorAll('.scroll-indicator-top, .scroll-indicator-bottom');
   const StoredUserName = localStorage.getItem('userName');
-  // const progressbar = document.querySelector('.progress-bar');
-  // const currentPage = 2;
-  // const totalPages = 32;
-  // const progressPercentage = (currentPage-1)/(totalPages-1)*100
-  let selectedPictures = [];
+  // const title = document.querySelector('.second_page_title');
+  const gallery = document.querySelector('.gallery');
+  const progress = document.querySelector('.progress');
+  const currentPage = 2;
+  const totalPages = 32;
+  const progressPercentage = (currentPage-1)/(totalPages-1)*100;
+
+  progress.style.width = progressPercentage + "%";
+
+  document.documentElement.style.scrollBehavior = 'smooth';
+
+
+  // let selectedPictures = [];
 
 
   // progressbar.style.width = `${progressPercentage}%`;
@@ -17,30 +25,18 @@ document.addEventListener('DOMContentLoaded', function() {
     userNameElement.textContent = StoredUserName;
   }
 
-  pictures.forEach((picture) => {
-    picture.addEventListener('click', () => {
-      picture.classList.toggle('selected');
-      const isSelected = picture.classList.contains('selected');
 
-      if (isSelected) {
-        selectedPictures.push(picture);
-      } else {
-        selectedPictures = selectedPictures.filter((pic) => pic !== picture);
-      }
+// Add event listener to the gallery element
+  gallery.addEventListener('click', (event) => {
+    const clickedElement = event.target;
 
-      if (selectedPictures.length > 0 && selectedPictures.length < 3) {
-        nextButton.removeAttribute('disabled');
-      } else {
-        nextButton.setAttribute('disabled', 'true');
-      }
-
-      if (selectedPictures.length === 3) {
-        // Automatically proceed to the next page
-        window.location.href = 'third_page.html';
-      }
-    });
+    // Check if the clicked element is a picture
+    if (clickedElement.classList.contains('picture')) {
+      // Toggle the selected class on the clicked picture
+      clickedElement.classList.toggle('selected');
+    }
   });
-
+  
   scrollIndicators.forEach(function(indicator) {
     indicator.addEventListener('click', function() {
       const container = document.querySelector('.container');

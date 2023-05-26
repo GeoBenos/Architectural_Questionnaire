@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const choices = document.querySelectorAll('input[type="radio"]');
-    const progressBar = document.querySelector('.progress-bar');
+  const choices = document.querySelectorAll('input[type="radio"]');
+  const progress = document.querySelector('.progress');
+  const currentPage = 3;
+  const totalPages = 32;
+  const progressPercentage = (currentPage-1)/(totalPages-1)*100;
+
+  progress.style.width = progressPercentage + "%";
   
     choices.forEach(choice => {
       choice.addEventListener('change', function() {

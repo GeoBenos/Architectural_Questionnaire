@@ -50,7 +50,7 @@ input {
   padding-bottom: 5px;
   width: 350px;
   border: none;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #555555;
   font-size: 22px;
   color: #000;
   outline: none; /* Remove the default outline on focus */
@@ -65,7 +65,7 @@ input::placeholder {
 
 button {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #143f6d67;
   color: #fff;
   border: none;
   cursor: pointer;
