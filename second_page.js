@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const pictures = document.querySelectorAll('.picture');
   const userNameElement = document.getElementById('userName');
-  const nextButton = document.getElementById('nextButton');
   const scrollIndicators = document.querySelectorAll('.scroll-indicator-top, .scroll-indicator-bottom');
   const StoredUserName = localStorage.getItem('userName');
-  // const title = document.querySelector('.second_page_title');
+  const nextPage = document.getElementById('right');
+  const prevPage = document.getElementById('left');
   const gallery = document.querySelector('.gallery');
+  const pictures = gallery.querySelectorAll('.picture');  
   const progress = document.querySelector('.progress');
   const currentPage = 2;
   const totalPages = 32;
@@ -15,27 +15,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.documentElement.style.scrollBehavior = 'smooth';
 
-
-  // let selectedPictures = [];
-
-
-  // progressbar.style.width = `${progressPercentage}%`;
-
   if (StoredUserName !== null && StoredUserName !== '') {
     userNameElement.textContent = StoredUserName;
   }
 
-
-// Add event listener to the gallery element
-  gallery.addEventListener('click', (event) => {
-    const clickedElement = event.target;
-
-    // Check if the clicked element is a picture
-    if (clickedElement.classList.contains('picture')) {
+  let selectedPictures = [];
+  pictures.forEach(function(picture) {
+    const checkmark = picture.querySelector('.checkmark')
+    
+    picture.addEventListener('click', function() {
       // Toggle the selected class on the clicked picture
-      clickedElement.classList.toggle('selected');
-    }
+      if (picture.classList.contains('selected')) {
+        picture.classList.remove('selected');
+        checkmark.classList.toggle('show')
+        const index = selectedPictures.indexOf(picture);
+        if (index !== -1) {
+          selectedPictures.splice(index, 1);
+        }
+      } else {
+        if (selectedPictures.length < 5) {
+          picture.classList.add('selected');
+          selectedPictures.push(picture);
+          checkmark.classList.toggle('show');
+        } else {
+          checkmark.classList.remove('show ')
+          const firstSelected = selectedPictures.shift();
+          firstSelected.classList.remove('selected');
+          const index = selectedPictures.indexOf(firstSelected);
+          if (index !== -1) {
+            selectedPictures.splice(index, 1);
+          }
+          picture.classList.add('selected');
+          selectedPictures.push(picture);
+        }
+      }
+      setTimeout(function() {
+        checkmark.classList.toggle('animate');
+      }, 10);
+    });
   });
+
   
   scrollIndicators.forEach(function(indicator) {
     indicator.addEventListener('click', function() {
@@ -49,4 +68,18 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // nextPage.addEventListener('click', function() {
+  //   window.location.href = 'third_page.html'
+  // });
+
+  // prevPage.addEventListener('click', function(){
+  //   window.localStorage.href = 'home_page.html'
+  // });
+
+  // nextPage.addEventListener('keyup'), function(event){
+  //   if(event.key === 'ArrowRight') {
+  //     window.location.href = 'third_page.html'
+  //   }
+  // }
 });
