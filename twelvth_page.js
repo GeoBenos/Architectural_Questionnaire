@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const progress = document.querySelector('.progress');
     var inputField = document.getElementById("inputField");
     var otherButton = document.querySelector(".other");
-    const currentPage = 9;
+    const currentPage = 12;
     const totalPages = 32;
     const progressPercentage = (currentPage-1)/(totalPages-1)*100;
   
@@ -73,13 +73,13 @@ document.addEventListener('DOMContentLoaded', function() {
     nextPage.addEventListener('click', function() {
       var answerInput = document.getElementById('answerInput');
       var answer = answerInput.value;
-      localStorage.setItem('user answer for page 9', answer)
+      localStorage.setItem('user answer for page 12', answer)
       console.log(answer);
-      window.location.href = 'tenth_page.html'
+      window.location.href = 'thirteenth_page.html'
     });
   
     prevPage.addEventListener('click', function(){
-      window.localStorage.href = 'eighth_page.html'
+      window.localStorage.href = 'tenth_page.html'
     });
   
     // nextPage.addEventListener('keyup'), function(event){

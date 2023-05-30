@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&family=Dosis:wght@200&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  display: flex;
+  object-fit: cover;
+  height: auto;
+  width: 100%;
+  opacity: 0; /* Initially hidden */
+  animation: appear 1s ease-in forwards; /* Smooth appear animation */
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.eleventh_page_question {
+    font-family: 'Dosis', sans-serif;
+    font-size: 30px;
+    margin-bottom: 60px;
+    margin-top: 200px;
+    margin-left: 770px;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+.progress-bar {
+    position: sticky;
+    background-color: #ccc;
+    height: 7px;
+}
+
+.progress {
+    position: sticky;
+    background-color: #c88d6f;
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+input {
+    margin-left: -400px;
+    margin-top: 350px;
+    margin-right: 10px;
+    width: 350px;
+    border: none;
+    border-bottom: 2px solid #555555;
+    font-size: 22px;
+    color: #000;
+    outline: none; /* Remove the default outline on focus */
+    font-family: 'Dosis', sans-serif;
+}
+
+input::placeholder {
+  color: darkgray;
+  font-size: 26px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #143f6d67;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+div#bedroomNumber {
+    display: none;
+  }
+
+.message-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.left {
+  position: fixed;
+  bottom: 0;
+  width: 45px;
+  height: 45px;
+  border: 0.5em solid #333;
+  border-radius: 50%;
+}
+
+.left {
+  right: 6em;
+  bottom: 20px;
+}
+
+
+.left:after {
+  content: "";
+  display: inline-block;
+  margin-top: 0.8em;
+  margin-left: 0.8em;
+  width: 14px;
+  height: 14px;
+  border-top: 0.5em solid #333;
+  border-right: 0.5em solid #333;
+  -moz-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.left:hover {
+  cursor: pointer;
+  border-top: 0.5em solid #c88d6f;
+  border-right: 0.5em solid #c88d6f;
+  border-bottom: 0.5em solid #c88d6f;
+  border-left: 0.5em solid #c88d6f;
+}

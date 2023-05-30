@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&family=Dosis:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin; /* Firefox */
+  overflow-y: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+}
+
+.container {
+  overflow-x: hidden;
+  overflow-y: auto;
+  animation: appear 1.4s ease-in forwards;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.progress-bar {
+  position: sticky;
+  top: 0;
+  background-color: #ccc;
+  height: 7px;
+}
+
+.progress {
+  background-color: #c88d6f;
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.picture {
+  margin-left: 750px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  align-items: center;
+  overflow: hidden;
+  display: inline block;
+  height: 400px;
+  width: 400px;
+  opacity: 1;
+  border-radius: 50%;
+  border-width: 10px;
+  border-color: black;
+}
+
+.eighth_page_question {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dosis', sans-serif;
+  font-size: 30px;
+  margin-bottom: 60px;
+  margin-top: 0px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.instructions{
+  margin-top: -50px;
+  margin-right: 560px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dosis', 'sans-serif';
+  font-size: 20px;
+  color: darkgray;
+}
+
+/* Additional styling for the buttons */
+.choice0,
+.choice1,
+.choice2
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 22px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight:600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* button:after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 150px;
+  height: 2px;
+  background-color: #0087ca;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+button:hover:after{
+  transform: scaleX(1);
+  background-color: #000;
+  transform-origin: bottom left;
+} */
+button:hover {
+  background-color: #c88d6f;
+}
+
+button:focus {
+  outline: none;
+
+}
+
+.left
+ {
+  position: fixed;
+  bottom: 0;
+  width: 45px;
+  height: 45px;
+  border: 0.5em solid #333;
+  border-radius: 50%;
+}
+
+.left {
+  right: 6em;
+  bottom: 20px;
+}
+
+
+.left:after {
+  content: "";
+  display: inline-block;
+  margin-top: 0.8em;
+  margin-left: 0.4em;
+  width: 14px;
+  height: 14px;
+  border-top: 0.5em solid #333;
+  border-right: 0.5em solid #333;
+  -moz-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.left:hover {
+  cursor: pointer;
+  border-top: 0.5em solid #c88d6f;
+  border-right: 0.5em solid #c88d6f;
+  border-bottom: 0.5em solid #c88d6f;
+  border-left: 0.5em solid #c88d6f;
+}

@@ -5,9 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const gallery = document.querySelector('.gallery');
     const pictures = gallery.querySelectorAll('.picture');  
     const progress = document.querySelector('.progress');
-    var inputField = document.getElementById("inputField");
-    var otherButton = document.querySelector(".other");
-    const currentPage = 9;
+    const currentPage = 14;
     const totalPages = 32;
     const progressPercentage = (currentPage-1)/(totalPages-1)*100;
   
@@ -33,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedPictures.splice(index, 1);
           }
         } else {
-          if (selectedPictures.length < 1) {
+          if (selectedPictures.length < 5) {
             picture.classList.add('selected');
             selectedPictures.push(picture);
             checkmark.classList.toggle('show');
@@ -50,36 +48,31 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
         setTimeout(function() {
-        checkmark.classList.toggle('animate');
+          checkmark.classList.toggle('animate');
         }, 10);
       });
     });
   
-  // function showInputField() {
-
-  //   if (inputField.style.opacity === "" || inputField.style.opacity === "0") {
-  //     inputField.style.opacity = "1";
-  //   } else {
-  //     inputField.style.opacity = "0";
-  //   }
-  
-  //   otherButton.classList.toggle("active");
-  // };
-  
     
-    
-
+    scrollIndicators.forEach(function(indicator) {
+      indicator.addEventListener('click', function() {
+        const container = document.querySelector('.container');
+        const scrollHeight = container.scrollHeight;
+  
+        if (indicator.classList.contains('scroll-indicator-top')) {
+          container.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          container.scrollTo({ top: scrollHeight, behavior: 'smooth' });
+        }
+      });
+    });
   
     nextPage.addEventListener('click', function() {
-      var answerInput = document.getElementById('answerInput');
-      var answer = answerInput.value;
-      localStorage.setItem('user answer for page 9', answer)
-      console.log(answer);
-      window.location.href = 'tenth_page.html'
+      window.location.href = 'fifteenth_page.html'
     });
   
     prevPage.addEventListener('click', function(){
-      window.localStorage.href = 'eighth_page.html'
+      window.localStorage.href = 'thirteenth_page.html'
     });
   
     // nextPage.addEventListener('keyup'), function(event){

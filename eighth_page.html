@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="eighth_page_style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Apercu&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="progress-bar">
+    <div class="progress"></div>
+  </div>
+  <div class="container">
+    <div class="picture">
+        <img src="https://raw.githubusercontent.com/GeoBenos/Questionnaire_website/e9025de9c5679907ebd232759762b2bbb1022588/pallete.jpg" alt="Image 1">
+    </div>
+    <div class="eighth_page_question">What is your preferred color pallete? <br> Do you prefer bright and bold colors or more muted and subdued hues?
+    </div>
+    <div class="instructions">
+      Pick one of the options below.
+    </div>
+    <div class="choice0">
+      <button type="button" name="range0" value="Bright and bold colors" onclick="saveValue(this.value)">Bright and bold colors</button>
+    </div>
+    <div class="choice1">
+      <button type="button" name="range1" value="Muted and subdued hues" onclick="saveValue(this.value)">Muted and subdued hues</button>
+    </div>
+    <div class="choice2">
+        <button type="button" name="range2" value="Both, depending on the room" onclick="saveValue(this.value)">Both, depending on the room</button>
+    </div>
+  </div>
+  <div>
+    <a href="ninth_page.html">
+      <span class="right"></span>
+    </a>
+  </div>
+  <div>
+    <a href="seventh_page.html">
+      <span class="left"></span>
+    </a>
+  </div>
+  <script src="eighth_page.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&family=Dosis:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin; /* Firefox */
+  overflow-y: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100vh;
+  animation: appear 1.4s ease-in forwards;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.progress-bar {
+  position: sticky;
+  top: 0;
+  background-color: #ccc;
+  height: 7px;
+  z-index: 999;
+}
+
+.instructions{
+    margin-right: 450px;
+margin-bottom: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: 'Dosis', 'sans-serif';
+font-size: 20px;
+color: darkgray;
+}
+
+.progress {
+  background-color: #c88d6f;
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.third_page_question {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dosis', sans-serif;
+  font-size: 26px;
+  margin-bottom: 20px;
+  margin-top: 200px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* Additional styling for the buttons */
+.choice1,
+.choice2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 22px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight:600;
+}
+
+/* button:after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 150px;
+  height: 2px;
+  background-color: #0087ca;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+button:hover:after{
+  transform: scaleX(1);
+  background-color: #000;
+  transform-origin: bottom left;
+} */
+button:hover {
+  background-color: #c88d6f;
+}
+
+button:focus {
+  outline: none;
+
+}
