@@ -13,10 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
     document.documentElement.style.scrollBehavior = 'smooth';
   
-    if (StoredUserName !== null && StoredUserName !== '') {
-      userNameElement.textContent = StoredUserName;
-    }
-  
     let selectedPictures = [];
     pictures.forEach(function(picture) {
       const checkmark = picture.querySelector('.checkmark')
@@ -31,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedPictures.splice(index, 1);
           }
         } else {
-          if (selectedPictures.length < 5) {
+          if (selectedPictures.length < 3) {
             picture.classList.add('selected');
             selectedPictures.push(picture);
             checkmark.classList.toggle('show');

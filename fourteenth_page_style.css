@@ -220,8 +220,8 @@ body {
 .left:after {
   content: "";
   display: inline-block;
-  margin-top: 0.8em;
-  margin-left: 0.8em;
+  margin-top: 0.4em;
+  margin-left: 0.5em;
   width: 14px;
   height: 14px;
   border-top: 0.5em solid #333;
@@ -233,8 +233,8 @@ body {
 .right:after {
   content: "";
   display: inline-block;
-  margin-top: 0.8em;
-  margin-left: 0.6em;
+  margin-top: 0.4em;
+  margin-left: 0.3em;
   width: 14px;
   height: 14px;
   border-top: 0.5em solid #333;
