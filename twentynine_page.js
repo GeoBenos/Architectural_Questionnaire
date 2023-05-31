@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const scrollIndicators = document.querySelectorAll('.scroll-indicator-top, .scroll-indicator-bottom');
     const gallery = document.querySelector('.gallery');
-    const pictures = gallery.querySelectorAll('.picture');  
+    const pictures = gallery.querySelectorAll('.picture, .picture_1');  
     const progress = document.querySelector('.progress');
     const currentPage = 29;
     const totalPages = 31;
