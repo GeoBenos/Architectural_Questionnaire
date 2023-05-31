@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var inputField = document.getElementById("inputField");
     var otherButton = document.querySelector(".other");
     const currentPage = 13;
-    const totalPages = 32;
+    const totalPages = 31;
     const progressPercentage = (currentPage-1)/(totalPages-1)*100;
   
     progress.style.width = progressPercentage + "%";

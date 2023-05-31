@@ -1,14 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     // const userName = document.getElementById('userName');
     // const StoredUserName = localStorage.getItem('userName');
-    const answerInput = document.getElementById('answerInput');
+    const answerInput = document.getElementById('answer');
     const nextButton = document.getElementById('nextButton');
-    const messageContainer = document.createElement('div');
     const progress = document.querySelector('.progress');
-    const prevPage = document.getElementById('left');
-    const currentPage = 15;
+    const messageContainer = document.createElement('div');
+    const currentPage = 23;
     const totalPages = 31;
-    const progressPercentage = (currentPage-1)/(totalPages-1)*100;
+    const progressPercentage = (currentPage - 1) / (totalPages - 1) * 100;
   
     progress.style.width = progressPercentage + "%";
   
@@ -31,24 +30,28 @@ document.addEventListener('DOMContentLoaded', function() {
       if (event.key === 'Enter') {
         event.preventDefault();
         if (answerInput.value.trim() === '') {
-          displayMessage('Please enter your name.');
+          displayMessage('Please enter your answer.');
         } else {
-          const bathrooms = answerInput.value.trim();
-          localStorage.setItem('userName', bathrooms);
-          window.location.href = 'sixteenth_page.html';
+          const userAnswer = answerInput.value.trim();
+          localStorage.setItem('userAnswer', userAnswer);
+          window.location.href = 'twentyfour_page.html';
         }
       }
     });
   
     nextButton.addEventListener('click', function() {
       if (answerInput.value.trim() === '') {
-        displayMessage('Please enter an answer.');
+        displayMessage('Please enter your answer.');
       } else {
-        const bedrooms = answerInput.value.trim();
-        localStorage.setItem('userName', bedrooms);
-        window.location.href = 'sixteenth_page.html';
+        const userAnswer = answerInput.value.trim();
+        localStorage.setItem('userName', userAnswer);
+        window.location.href = 'twentyfour_page.html';
       }
     });
+
+    prevPage.addEventListener('click', function(){
+      window.localStorage.href = 'twentytwo_page.html'
+      });
   
     function displayMessage(text) {
       messageContainer.textContent = text;
@@ -60,9 +63,5 @@ document.addEventListener('DOMContentLoaded', function() {
         messageContainer.remove();
       }, 4000);
     }
-
-    prevPage.addEventListener('click', function(){
-        window.localStorage.href = 'fourteenth_page.html'
-    });
   });
   

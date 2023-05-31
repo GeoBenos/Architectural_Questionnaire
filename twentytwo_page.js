@@ -5,13 +5,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const gallery = document.querySelector('.gallery');
     const pictures = gallery.querySelectorAll('.picture');  
     const progress = document.querySelector('.progress');
-    const currentPage = 14;
+    let inputField = localStorage.getItem('input');
+    localStorage.setItem("Extra materials the user entered: ", inputField)
+    console.log(inputField)
+    var otherButton = document.querySelector(".other");
+    const currentPage = 22;
     const totalPages = 31;
     const progressPercentage = (currentPage-1)/(totalPages-1)*100;
   
     progress.style.width = progressPercentage + "%";
   
     document.documentElement.style.scrollBehavior = 'smooth';
+  
   
     let selectedPictures = [];
     pictures.forEach(function(picture) {
@@ -27,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedPictures.splice(index, 1);
           }
         } else {
-          if (selectedPictures.length < 3) {
+          if (selectedPictures.length < 2) {
             picture.classList.add('selected');
             selectedPictures.push(picture);
             checkmark.classList.toggle('show');
@@ -44,37 +49,21 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
         setTimeout(function() {
-          checkmark.classList.toggle('animate');
+        checkmark.classList.toggle('animate');
         }, 10);
       });
     });
-  
+
     
-    scrollIndicators.forEach(function(indicator) {
-      indicator.addEventListener('click', function() {
-        const container = document.querySelector('.container');
-        const scrollHeight = container.scrollHeight;
-  
-        if (indicator.classList.contains('scroll-indicator-top')) {
-          container.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-          container.scrollTo({ top: scrollHeight, behavior: 'smooth' });
-        }
-      });
-    });
-  
     nextPage.addEventListener('click', function() {
-      window.location.href = 'fifteenth_page.html'
-    });
-  
-    prevPage.addEventListener('click', function(){
-      window.localStorage.href = 'thirteenth_page.html'
-    });
-  
-    // nextPage.addEventListener('keyup'), function(event){
-    //   if(event.key === 'ArrowRight') {
-    //     window.location.href = 'third_page.html'
-    //   }
-    // }
-  });
-  
+        var answerInput = document.getElementById('answerInput');
+        var answer = answerInput.value;
+        localStorage.setItem('user answer for page 22', answer)
+        console.log(answer);
+        window.location.href = 'twentythree_page.html'
+      });
+    
+      prevPage.addEventListener('click', function(){
+        window.localStorage.href = 'twentyone_page.html'
+      });
+});

@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const scrollIndicators = document.querySelectorAll('.scroll-indicator-top, .scroll-indicator-bottom');
-    const nextPage = document.getElementById('right');
-    const prevPage = document.getElementById('left');
     const gallery = document.querySelector('.gallery');
     const pictures = gallery.querySelectorAll('.picture');  
     const progress = document.querySelector('.progress');
-    const currentPage = 14;
+    const currentPage = 29;
     const totalPages = 31;
     const progressPercentage = (currentPage-1)/(totalPages-1)*100;
   
@@ -27,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedPictures.splice(index, 1);
           }
         } else {
-          if (selectedPictures.length < 3) {
+          if (selectedPictures.length < 9) {
             picture.classList.add('selected');
             selectedPictures.push(picture);
             checkmark.classList.toggle('show');
@@ -63,13 +61,13 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   
-    nextPage.addEventListener('click', function() {
-      window.location.href = 'fifteenth_page.html'
-    });
+    // nextPage.addEventListener('click', function() {
+    //   window.location.href = 'third_page.html'
+    // });
   
-    prevPage.addEventListener('click', function(){
-      window.localStorage.href = 'thirteenth_page.html'
-    });
+    // prevPage.addEventListener('click', function(){
+    //   window.localStorage.href = 'home_page.html'
+    // });
   
     // nextPage.addEventListener('keyup'), function(event){
     //   if(event.key === 'ArrowRight') {

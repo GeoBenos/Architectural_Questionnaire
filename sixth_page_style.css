@@ -59,9 +59,9 @@ body {
 .choice0,
 .choice1
 {
-    display: flex;
-    margin-bottom: 20px;
-    align-items: center;
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
 }
 
 button {

@@ -8,16 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var inputField = document.getElementById("inputField");
     var otherButton = document.querySelector(".other");
     const currentPage = 9;
-    const totalPages = 32;
+    const totalPages = 31;
     const progressPercentage = (currentPage-1)/(totalPages-1)*100;
   
     progress.style.width = progressPercentage + "%";
   
     document.documentElement.style.scrollBehavior = 'smooth';
   
-    if (StoredUserName !== null && StoredUserName !== '') {
-      userNameElement.textContent = StoredUserName;
-    }
   
     let selectedPictures = [];
     pictures.forEach(function(picture) {

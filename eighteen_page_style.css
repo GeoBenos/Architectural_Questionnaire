@@ -34,7 +34,7 @@ body {
 }
 
 .instructions{
-    margin-right: 510px;
+    margin-right: 390px;
     margin-bottom: 50px;
     display: flex;
     justify-content: center;
@@ -67,22 +67,11 @@ body {
 
 /* Additional styling for the buttons */
 .choice1,
-.choice2,
-.choice3
+.choice2
 {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-}
-
-input{
-    width: 350px;
-  border: none;
-  border-bottom: 2px solid #555555;
-  font-size: 26px;
-  color: #000;
-  outline: none; /* Remove the default outline on focus */
-  font-family: 'Dosis', sans-serif;
 }
 
 button {

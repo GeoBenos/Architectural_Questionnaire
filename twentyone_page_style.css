@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&family=Dosis:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin; /* Firefox */
+  overflow-y: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.instructions{
+    margin-right: -1200px;
+    margin-top: 80px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Dosis';
+    font-size: 20px;
+    color: darkgray;
+    font-weight: normal;
+}
+
+.twentyone_page_question {
+    font-family: 'Dosis';
+    font-size: 30px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 4px;
+    font-weight: bold;
+    opacity: 0;
+    animation: appear 1.4s ease-in forwards;
+  }
+
+input {
+    margin-bottom: 10px;
+    padding-top: 70px;
+    padding-bottom: 5px;
+    height: 30px;
+    width: 450px;
+    border: none;
+    border-bottom: 2px solid #555555;
+    font-size: 30px;
+    color: #000;
+    outline: none; /* Remove the default outline on focus */
+    font-family: 'Dosis', sans-serif;
+  }
+
+.progress-bar {
+  position: sticky;
+  background-color: #ccc;
+  height: 7px;
+}
+
+.progress {
+  position: sticky;
+  background-color: #c88d6f;
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c88d6f;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c88d6f;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(400px, 1fr));
+  grid-gap: 50px;
+  padding: 20px;
+  padding-left: 20px;
+  justify-items: flex-start;
+  opacity: 0;
+  animation: appear 1.4s ease-in forwards;
+}
+
+@keyframes appear {
+   0% {
+     opacity: 0;
+   }
+   100% {
+     opacity: 1;
+   }
+}
+
+.picture {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  width: 450px;
+}
+
+.picture:hover {
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.picture img {
+  width: 450px;
+  height: 300px;
+}
+
+.text {
+  background-color: #fff;
+  padding: 10px;
+  font-size: 22px;
+  width: 390px;
+  font-family: 'Dosis';
+  font-weight: bolder;
+}
+
+/* Check mark */
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+}
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #7ac142;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  opacity: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  stroke-width: 5;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 10% auto;
+  box-shadow: inset 0px 0px 0px black;
+  animation: fill .4s ease-in-out .4s forwards;
+  animation: scale .5s ease-in-out .9s both;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+.checkmark.show{
+  opacity: 1;
+  animation: fill .4s ease-in-out .4s forwards;
+  animation: scale .5s ease-in-out .9s both;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark.animate {
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+  
+}
+
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #c88d6f;
+  }
+}
+
+.left,
+.right {
+  position: fixed;
+  bottom: 0;
+  width: 45px;
+  height: 45px;
+  border: 0.5em solid #333;
+  border-radius: 50%;
+}
+
+.left {
+  right: 6em;
+  bottom: 20px;
+}
+
+.right {
+  right: 28px;
+  bottom: 20px;
+}
+
+.left:after {
+  content: "";
+  display: inline-block;
+  margin-top: 0.8em;
+  margin-left: 0.8em;
+  width: 14px;
+  height: 14px;
+  border-top: 0.5em solid #333;
+  border-right: 0.5em solid #333;
+  -moz-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+.right:after {
+  content: "";
+  display: inline-block;
+  margin-top: 0.8em;
+  margin-left: 0.6em;
+  width: 14px;
+  height: 14px;
+  border-top: 0.5em solid #333;
+  border-right: 0.5em solid #333;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.left:hover {
+  cursor: pointer;
+  border-top: 0.5em solid #c88d6f;
+  border-right: 0.5em solid #c88d6f;
+  border-bottom: 0.5em solid #c88d6f;
+  border-left: 0.5em solid #c88d6f;
+}
+
+.right:hover{
+  cursor: pointer;
+  border-top: 0.5em solid #c88d6f;
+  border-right: 0.5em solid #c88d6f;
+  border-bottom: 0.5em solid #c88d6f;
+  border-left: 0.5em solid #c88d6f;
+}

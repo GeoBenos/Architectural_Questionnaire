@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const pictures = gallery.querySelectorAll('.picture');  
     const progress = document.querySelector('.progress');
     const currentPage = 4;
-    const totalPages = 32;
+    const totalPages = 31;
     const progressPercentage = (currentPage-1)/(totalPages-1)*100;
   
     progress.style.width = progressPercentage + "%";

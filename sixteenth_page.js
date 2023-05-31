@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const gallery = document.querySelector('.gallery');
     const pictures = gallery.querySelectorAll('.picture');  
     const progress = document.querySelector('.progress');
-    const currentPage = 14;
+    const currentPage = 16;
     const totalPages = 31;
     const progressPercentage = (currentPage-1)/(totalPages-1)*100;
   
@@ -64,11 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   
     nextPage.addEventListener('click', function() {
-      window.location.href = 'fifteenth_page.html'
+      window.location.href = 'seventeenth_page.html'
     });
   
     prevPage.addEventListener('click', function(){
-      window.localStorage.href = 'thirteenth_page.html'
+      window.localStorage.href = 'fifteenth_page.html'
     });
   
     // nextPage.addEventListener('keyup'), function(event){
