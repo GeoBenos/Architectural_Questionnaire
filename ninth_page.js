@@ -1,12 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const scrollIndicators = document.querySelectorAll('.scroll-indicator-top, .scroll-indicator-bottom');
     const nextPage = document.getElementById('right');
     const prevPage = document.getElementById('left');
     const gallery = document.querySelector('.gallery');
     const pictures = gallery.querySelectorAll('.picture');  
     const progress = document.querySelector('.progress');
-    var inputField = document.getElementById("inputField");
-    var otherButton = document.querySelector(".other");
     const currentPage = 9;
     const totalPages = 31;
     const progressPercentage = (currentPage-1)/(totalPages-1)*100;
@@ -14,7 +11,40 @@ document.addEventListener('DOMContentLoaded', function() {
     progress.style.width = progressPercentage + "%";
   
     document.documentElement.style.scrollBehavior = 'smooth';
+
+
+    function SaveUserAnswers() {
+      var pageNineAnswers = {};
   
+      // Get the ninth_page_title element
+      var ninthPageTitle = document.querySelector('.ninth_page_title').innerText.trim();
+  
+      selectedPictures_ninth_page = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
+      const selectedNames = selectedPictures_ninth_page.map(picture => picture.querySelector('.text').innerText.trim());
+      console.log(selectedNames);
+      console.log(selectedPictures_ninth_page);
+      selectedNames.forEach(function(name, index) {
+        pageNineAnswers[ninthPageTitle + ': user clicked images' + (index + 1)] = name;
+      });
+  
+      // Get the user input from the answerInput field
+      var answerInput = document.getElementById('inputField');
+      var userInput = answerInput.value.trim();
+  
+      // Add the user input to the JSON object
+      if (userInput !== "") {
+        pageNineAnswers[ninthPageTitle + ': user input'] = userInput;
+      }
+  
+      // Convert the userAnswers object to JSON
+      var jsonAnswers = JSON.stringify(pageNineAnswers);
+  
+      // Store the JSON data in the localStorage
+      localStorage.setItem('Page 9 answers', jsonAnswers);
+      console.log(jsonAnswers);
+    };
+
+
   
     let selectedPictures = [];
     pictures.forEach(function(picture) {
@@ -46,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedPictures.push(picture);
           }
         }
+        SaveUserAnswers();
         setTimeout(function() {
         checkmark.classList.toggle('animate');
         }, 10);
@@ -63,16 +94,9 @@ document.addEventListener('DOMContentLoaded', function() {
   //   otherButton.classList.toggle("active");
   // };
   
-    
-    
-
-  
     nextPage.addEventListener('click', function() {
-      var answerInput = document.getElementById('answerInput');
-      var answer = answerInput.value;
-      localStorage.setItem('user answer for page 9', answer)
-      console.log(answer);
       window.location.href = 'tenth_page.html'
+      SaveUserAnswers();
     });
   
     prevPage.addEventListener('click', function(){

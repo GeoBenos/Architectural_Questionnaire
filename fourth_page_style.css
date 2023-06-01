@@ -10,11 +10,18 @@ body {
 }
 
 
-.instructions {
-    display: fixed;
-    top: 100;
-    right: 60;
-  }
+.instructions{
+  margin-right: 1190px;
+  margin-top: 40px;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dosis';
+  font-size: 22px;
+  color: darkgray;
+  font-weight: normal;
+}
 
 .progress-bar {
   position: sticky;
@@ -91,9 +98,10 @@ body {
 }
 
 .text {
+  font-family: 'Dosis';
   background-color: #fff;
   padding: 10px;
-  font-size: 18px;
+  font-size: 22px;
   width: 390px;
 }
 

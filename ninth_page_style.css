@@ -10,11 +10,16 @@ body {
 }
 
 
-.instructions {
-    display: fixed;
-    top: 100;
-    right: 60;
-  }
+.instructions{
+  margin-left: 250px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  display: flex;
+  font-family: 'Dosis';
+  font-size: 22px;
+  color: darkgray;
+  font-weight: normal;
+}
 
 .progress-bar {
   position: sticky;
@@ -53,7 +58,7 @@ body {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(2, minmax(200px, 3fr));
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
   grid-gap: 50px;
   padding: 20px;
   padding-left: 20px;
@@ -72,7 +77,7 @@ body {
 }
 
 .picture {
-  position: flex;
+  position: relative;
   border: 1px solid #ccc;
   border-radius: 10px;
   overflow: hidden;
@@ -101,7 +106,7 @@ body {
 }
 
 
-.fourth_page_title {
+.ninth_page_title {
   font-family: 'Dosis';
   font-size: 30px;
   padding-left: 550px;

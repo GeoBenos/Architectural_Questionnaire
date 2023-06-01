@@ -10,9 +10,16 @@ body {
 }
 
 .instructions {
-  position: absolute;
-  top: 140px;
-  right: 20px;
+  margin-right: -1000px;
+  margin-top: 40px;
+  margin-bottom: -90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dosis';
+  font-size: 22px;
+  color: darkgray;
+  font-weight: normal;
 }
 
 .progress-bar {
@@ -90,15 +97,16 @@ body {
 }
 
 .text {
+  font-family: 'Dosis';
   background-color: #fff;
   padding: 10px;
-  font-size: 18px;
+  font-size: 22px;
   width: 390px;
 }
 
 .second_page_title {
-  font-family: 'Space Grotesk';
-  font-size: 24px;
+  font-family: 'Dosis';
+  font-size: 26px;
   padding-left: 30px;
   padding-top: 30px;
   padding-bottom: 4px;
@@ -109,7 +117,7 @@ body {
 
 .second_page_question {
   font-family: 'Dosis';
-  font-size: 24px;
+  font-size: 26px;
   margin-bottom: 25px;
   font-weight: bold;
 }

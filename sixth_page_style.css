@@ -26,6 +26,17 @@ body {
   }
 }
 
+.sixth_page_question{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dosis', sans-serif;
+  font-size: 30px;
+  margin-bottom: 60px;
+  margin-top: 250px;
+  font-weight: bold;
+  padding: 10px;
+}
 .progress-bar {
   position: sticky;
   top: 0;
@@ -59,8 +70,9 @@ body {
 .choice0,
 .choice1
 {
-  display: flex;
+  display: inline-block;
   margin-bottom: 20px;
+  margin-right: 10px;
   align-items: center;
 }
 
@@ -72,8 +84,8 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-weight:600;
-  display: flex;
+  font-weight: 600;
+  display: inline-block;
   justify-content: center;
   align-items: center;
 }
@@ -138,6 +150,7 @@ button:focus {
   -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
+
 .right:after {
   content: "";
   display: inline-block;
