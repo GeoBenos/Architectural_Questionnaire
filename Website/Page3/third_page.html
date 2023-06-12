@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="third_page_style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Apercu&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="progress-bar">
+    <div class="progress"></div>
+  </div>
+  <div class="container">
+    <div class="third_page_question">We'd love to hear more about the location you have in mind for your new house, such as the neighborhood or specific area. Is it in the city center, the suburbs, or in the countryside?
+    </div>
+    <div class="choice1">
+      <button type="button" name="location1" value="A.   City center" onclick="saveValue(this.value)">A.   City center</button>
+    </div>
+    <div class="choice2">
+      <button type="button" name="location2" value="B.   Suburbs" onclick="saveValue(this.value)">B.   Suburbs</button>
+    </div>
+    <div class="choice3">
+      <button type="button" name="location3" value="C.   The Countryside" onclick="saveValue(this.value)">C.   The Countryside</button>
+    </div>
+  </div>
+  <div>
+    <a href="fourth_page.html">
+      <span class="right"></span>
+    </a>
+  </div>
+  <div>
+    <a href="second_page.html">
+      <span class="left"></span>
+    </a>
+  </div>
+  <script src="third_page.js"></script>
+</body>
+</html>
