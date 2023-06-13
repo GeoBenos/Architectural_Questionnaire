@@ -11,7 +11,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![MIT License][license-shield]][license-url]
+[![MIT License][license-shield]](https://github.com/GeoBenos/Questionnaire_website/blob/main/LICENSE)
 [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/george-benos-4b87a3234)
 
 
@@ -20,7 +20,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/GeoBenos/Questionnaire_website">
-    <img src="[images/logo.png](https://raw.githubusercontent.com/GeoBenos/Questionnaire_website/blob/e170e068f9471c735f3d877e72cdc6a4d2f833ed/Website/Home/Images/Home_photo.jpg)" alt="Logo" width="80" height="80">
+    <img src="https://raw.githubusercontent.com/GeoBenos/Questionnaire_website/blob/e170e068f9471c735f3d877e72cdc6a4d2f833ed/Website/Home/Images/Home_photo.jpg" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Architectural Questionnaire</h3>
