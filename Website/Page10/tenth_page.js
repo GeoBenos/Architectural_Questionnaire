@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         SaveUserAnswers(selectedValue);
         setTimeout(() => {
-          window.location.href = 'eleventh_page.html'; // Automatically proceed to the fourth page
+          window.location.href = '/Questionnaire_website/Website/Page11/eleventh_page.html'; // Automatically proceed to the fourth page
         }, 500); // Delay for 1 second before advancing to the next page
       });
     });

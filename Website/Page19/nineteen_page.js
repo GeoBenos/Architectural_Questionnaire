@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     prevPage.addEventListener('click', function(){
-      window.localStorage.href = 'sixteenth_page.html'
+      window.localStorage.href = '/Questionnaire_website/Website/Page18/eighteenth_page.html'
       });
   
     function displayMessage(text) {

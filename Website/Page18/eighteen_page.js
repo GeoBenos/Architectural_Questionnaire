@@ -13,12 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('selectedValue', selectedValue);
         console.log("Selected value in Page 18: " + selectedValue);
         setTimeout(() => {
-          window.location.href = 'nineteen_page.html'; // Automatically proceed to the fourth page
+          window.location.href = '/Questionnaire_website/Website/Page19/nineteen_page.html'; // Automatically proceed to the fourth page
         }, 500); // Delay for 0.5 second before advancing to the next page
       });
     });
 
     prevPage.addEventListener('click', function(){
-      window.localStorage.href = 'seventeenth_page.html'
+      window.localStorage.href = '/Questionnaire_website/Website/Page17/seventeenth_page.html'
       });
   });

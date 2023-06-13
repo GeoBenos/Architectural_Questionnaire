@@ -1,14 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const scrollIndicators = document.querySelectorAll('.scroll-indicator-top, .scroll-indicator-bottom');
-    const nextPage = document.getElementById('right');
-    const prevPage = document.getElementById('left');
-    const gallery = document.querySelector('.gallery');
     const pictures = gallery.querySelectorAll('.picture');  
     const progress = document.querySelector('.progress');
     let inputField = localStorage.getItem('input');
     localStorage.setItem("Extra materials the user entered: ", inputField)
     console.log(inputField)
-    var otherButton = document.querySelector(".other");
     const currentPage = 21;
     const totalPages = 31;
     const progressPercentage = (currentPage-1)/(totalPages-1)*100;
@@ -53,17 +48,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 10);
       });
     });
-
-    
-    nextPage.addEventListener('click', function() {
-        var answerInput = document.getElementById('answerInput');
-        var answer = answerInput.value;
-        localStorage.setItem('user answer for page 9', answer)
-        console.log(answer);
-        window.location.href = 'tenth_page.html'
-      });
-    
-      prevPage.addEventListener('click', function(){
-        window.localStorage.href = 'eighth_page.html'
-      });
 });

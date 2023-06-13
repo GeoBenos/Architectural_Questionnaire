@@ -20,9 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // }
   
     answerInput.addEventListener('input', function() {
-      if (answerInput.value.trim() !== '') {
+      if (isNaN(answerInput.value.trim())===false && answerInput.value.trim!=null) {
         nextButton.disabled = false;
       } else {
+        displayMessage("Please enter a number.")
         nextButton.disabled = true;
       }
     });
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
           const bathrooms = answerInput.value.trim();
           localStorage.setItem('userName', bathrooms);
-          window.location.href = 'sixteenth_page.html';
+          window.location.href = '/Questionnaire_website/Website/Page16/sixteenth_page.html';
         }
       }
     });
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         const bedrooms = answerInput.value.trim();
         localStorage.setItem('userName', bedrooms);
-        window.location.href = 'sixteenth_page.html';
+        window.location.href = '/Questionnaire_website/Website/Page16/sixteenth_page.html';
       }
     });
   
@@ -62,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     prevPage.addEventListener('click', function(){
-        window.localStorage.href = 'fourteenth_page.html'
+        window.localStorage.href = '/Questionnaire_website/Website/Page14/fourteenth_page.html'
     });
   });
   

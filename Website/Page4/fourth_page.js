@@ -86,11 +86,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   nextPage.addEventListener('click', function() {
-    storeUserAnswers();
-    window.location.href = 'fifth_page.html';
+    SaveUserAnswers();
+    window.location.href = '/Questionnaire_website/Website/Page5/fifth_page.html';
   });
   
   prevPage.addEventListener('click', function(){
-    window.location.href = 'home_page.html';
+    window.location.href = '/Questionnaire_website/Website/Page3/third_page.html';
   });
 });

@@ -64,11 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   
     nextPage.addEventListener('click', function() {
-      window.location.href = 'fifteenth_page.html'
+      window.location.href = '/Questionnaire_website/Website/Page15/fifteenth_page.html'
     });
   
     prevPage.addEventListener('click', function(){
-      window.localStorage.href = 'thirteenth_page.html'
+      window.localStorage.href = '/Questionnaire_website/Website/Page13/thirteenth_page.html'
     });
   
     // nextPage.addEventListener('keyup'), function(event){

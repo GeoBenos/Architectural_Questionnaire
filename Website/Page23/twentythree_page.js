@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
           const userAnswer = answerInput.value.trim();
           localStorage.setItem('userAnswer', userAnswer);
-          window.location.href = 'twentyfour_page.html';
+          window.location.href = '/Questionnaire_website/Website/Page24/twentyfour_page.html';
         }
       }
     });
@@ -45,12 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         const userAnswer = answerInput.value.trim();
         localStorage.setItem('userName', userAnswer);
-        window.location.href = 'twentyfour_page.html';
+        window.location.href = '/Questionnaire_website/Website/Page24/twentyfour_page.html';
       }
     });
 
     prevPage.addEventListener('click', function(){
-      window.localStorage.href = 'twentytwo_page.html'
+      window.localStorage.href = '/Questionnaire_website/Website/Page22/twentytwo_page.html'
       });
   
     function displayMessage(text) {

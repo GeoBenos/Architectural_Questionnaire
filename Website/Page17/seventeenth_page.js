@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('selectedValue', selectedValue);
         console.log("Selected value in Page 11: " + selectedValue);
         setTimeout(() => {
-          window.location.href = 'eighteen_page.html'; // Automatically proceed to the fourth page
+          window.location.href = '/Questionnaire_website/Website/Page18/eighteen_page.html'; // Automatically proceed to the fourth page
         }, 500); // Delay for 1 second before advancing to the next page
       });
     });
@@ -23,10 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
         var answer = answerInput.value;
         localStorage.setItem('user answer for page 17', answer)
         console.log(answer);
-        window.location.href = 'eighteen_page.html'
+        window.location.href = '/Questionnaire_website/Website/Page18/eighteen_page.html'
       });
 
     prevPage.addEventListener('click', function(){
-    window.localStorage.href = 'sixteenth_page.html'
+    window.localStorage.href = '/Questionnaire_website/Website/Page16/sixteenth_page.html'
     });
   });

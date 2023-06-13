@@ -75,11 +75,11 @@ document.addEventListener('DOMContentLoaded', function() {
       var answer = answerInput.value;
       localStorage.setItem('user answer for page 12', answer)
       console.log(answer);
-      window.location.href = 'thirteenth_page.html'
+      window.location.href = '/Questionnaire_website/Website/Page13/thirteenth_page.html'
     });
   
     prevPage.addEventListener('click', function(){
-      window.localStorage.href = 'tenth_page.html'
+      window.localStorage.href = '/Questionnaire_website/Website/Page10/tenth_page.html'
     });
   
     // nextPage.addEventListener('keyup'), function(event){

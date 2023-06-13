@@ -60,10 +60,10 @@ document.addEventListener('DOMContentLoaded', function() {
         var answer = answerInput.value;
         localStorage.setItem('user answer for page 22', answer)
         console.log(answer);
-        window.location.href = 'twentythree_page.html'
+        window.location.href = '/Questionnaire_website/Website/Page23/twentythree_page.html'
       });
     
       prevPage.addEventListener('click', function(){
-        window.localStorage.href = 'twentyone_page.html'
+        window.localStorage.href = '/Questionnaire_website/Website/Page21/twentyone_page.html'
       });
 });

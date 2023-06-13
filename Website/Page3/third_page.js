@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.setItem('selectedValue', selectedValue);
       console.log("Selected value in Page 3: " + selectedValue);
       setTimeout(() => {
-        window.location.href = 'fourth_page.html'; // Automatically proceed to the fourth page
+        window.location.href = '/Questionnaire_website/Website/Page4/fourth_page.html'; // Automatically proceed to the fourth page
       }, 500); // Delay for 1 second before advancing to the next page
     });
   });
