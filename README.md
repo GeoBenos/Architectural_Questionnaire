@@ -12,7 +12,7 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![MIT License][license-shield]][license-url]
-![LinkedIn][linkedin-shield](https://www.linkedin.com/in/george-benos-4b87a3234)
+[![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/george-benos-4b87a3234)
 
 
 
