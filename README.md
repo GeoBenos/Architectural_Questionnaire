@@ -11,7 +11,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![MIT License][license-shield]](https://github.com/GeoBenos/Questionnaire_website/blob/main/LICENSE)
 [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/george-benos-4b87a3234)
 
 
@@ -20,7 +20,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/GeoBenos/Questionnaire_website">
-    <img src="https://raw.githubusercontent.com/GeoBenos/Questionnaire_website/blob/e170e068f9471c735f3d877e72cdc6a4d2f833ed/Website/Home/Images/Home_photo.jpg" alt="Logo" width="80" height="80">
+    <img src="https://raw.githubusercontent.com/GeoBenos/Questionnaire_website/e170e068f9471c735f3d877e72cdc6a4d2f833ed/Website/Home/Images/Home_photo.jpg" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Architectural Questionnaire</h3>
@@ -66,7 +66,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+In this questionnaire the user gets to add information via inputs and select various examples of what they would like  `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -74,8 +74,8 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
+* [![Javascript]({https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E})](https://www.javascript.com/)
+* [![CSS]({https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white})][React-url]
 * [![Vue][Vue.js]][Vue-url]
 * [![Angular][Angular.io]][Angular-url]
 * [![Svelte][Svelte.dev]][Svelte-url]
