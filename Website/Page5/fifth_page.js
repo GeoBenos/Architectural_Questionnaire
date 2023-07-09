@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log("Selected value in Page 5: " + selectedValue);
       SaveUserAnswers(selectedValue);
       setTimeout(() => {
-        window.location.href = '/Questionnaire_website/Website/Page6/sixth_page.html'; // Automatically proceed to the sixth page
+        window.location.href = '../Page6/sixth_page.html'; // Automatically proceed to the sixth page
       }, 500); // Delay for 1 second before advancing to the next page
     });
   });

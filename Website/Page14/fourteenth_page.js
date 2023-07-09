@@ -10,9 +10,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const progressPercentage = (currentPage-1)/(totalPages-1)*100;
   
     progress.style.width = progressPercentage + "%";
+    const nextPageButton = document.getElementById('nextPage');
   
     document.documentElement.style.scrollBehavior = 'smooth';
   
+    function SaveUserAnswers() {
+      pageFourteenAnswers = {};
+      var fourteenthPageTitle = document.querySelector('.fourteenth_page_title').innerText.trim();
+  
+      selectedPictures_twelveth_page = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
+      const selectedNames = selectedPictures_twelveth_page.map(picture => picture.querySelector('.text').innerText.trim());
+      console.log(selectedNames);
+      console.log(selectedPictures_twelveth_page);
+      selectedNames.forEach(function(name, index) {
+        pageFourteenAnswers[fourteenthPageTitle + ': user clicked images No.' + (index + 1)] = name;
+      });
+  
+      var jsonAnswers = JSON.stringify(pageFourteenAnswers);
+      localStorage.setItem('Page 14 answers', jsonAnswers);
+      console.log(jsonAnswers);
+    };
+
     let selectedPictures = [];
     pictures.forEach(function(picture) {
       const checkmark = picture.querySelector('.checkmark')
@@ -43,6 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedPictures.push(picture);
           }
         }
+
+        SaveUserAnswers();
+
         setTimeout(function() {
           checkmark.classList.toggle('animate');
         }, 10);
@@ -63,12 +84,19 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   
-    nextPage.addEventListener('click', function() {
-      window.location.href = '/Questionnaire_website/Website/Page15/fifteenth_page.html'
+    nextPageButton.addEventListener('click', function() {
+      var answerInput = document.getElementById('inputField');
+      var userInput = answerInput.value.trim();
+      if (selectedPictures.length === 0 && userInput !== "") {
+        UserInput();
+      } else {
+        SaveUserAnswers();
+      }
+      window.location.href = '../Page15/fifteenth_page.html';
     });
   
     prevPage.addEventListener('click', function(){
-      window.localStorage.href = '/Questionnaire_website/Website/Page13/thirteenth_page.html'
+      window.localStorage.href = '../Page13/thirteenth_page.html'
     });
   
     // nextPage.addEventListener('keyup'), function(event){

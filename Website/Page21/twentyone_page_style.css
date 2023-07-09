@@ -10,8 +10,8 @@ body {
 }
 
 .instructions{
-    margin-right: -1200px;
-    margin-top: 80px;
+    margin-right: 75%;
+    margin-top: 30px;
     margin-bottom: 0px;
     display: flex;
     justify-content: center;
@@ -26,7 +26,7 @@ body {
     font-family: 'Dosis';
     font-size: 30px;
     padding-left: 30px;
-    padding-top: 10px;
+    padding-top: 15 px;
     padding-bottom: 4px;
     font-weight: bold;
     opacity: 0;

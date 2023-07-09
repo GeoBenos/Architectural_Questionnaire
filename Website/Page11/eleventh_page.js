@@ -14,20 +14,17 @@ document.addEventListener('DOMContentLoaded', function() {
   
     messageContainer.classList.add('message-container');
   
-    // if (StoredUserName !== null && StoredUserName !== '') {
-    //   userName.textContent = StoredUserName;
-    //   nextButton.disabled = false; // Enable the next button if username is stored
-    // }
     function SaveUserAnswers() {
       var pageElevenAnswers = {};
 
       // Get the user input from the answerInput field
+      var elevenPageTitle = document.getElementsByClassName('eleventh_page_question').value;
       var answerInput = document.getElementById('answerInput');
       var userInput = answerInput.value.trim();
   
       // Add the user input to the JSON object
       if (userInput !== "") {
-        pageElevenAnswers[ninthPageTitle + ': user input'] = userInput;
+        pageElevenAnswers[elevenPageTitle + ': user input'] = userInput;
       }
   
       // Convert the userAnswers object to JSON
@@ -56,19 +53,21 @@ document.addEventListener('DOMContentLoaded', function() {
           displayMessage('Please enter a number.');
         } else {
           const bedrooms = answerInput.value.trim();
+          SaveUserAnswers();
           localStorage.setItem('userName', bedrooms);
-          window.location.href = '/Questionnaire_website/Website/Page12/twelvth_page.html';
+          window.location.href = '../Page12/twelvth_page.html';
         }
       }
     });
   
     nextButton.addEventListener('click', function() {
       if (answerInput.value.trim() === '') {
-        displayMessage('Please enter your name.');
+        displayMessage('Please enter a number.');
       } else {
         const bedrooms = answerInput.value.trim();
+        SaveUserAnswers();
         localStorage.setItem('userName', bedrooms);
-        window.location.href = '/Questionnaire_website/Website/Page12/twelvth_page.html';
+        window.location.href = '../Page12/twelvth_page.html'; 
       }
     });
   
@@ -84,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     prevPage.addEventListener('click', function(){
-        window.localStorage.href = '/Questionnaire_website/Website/Page10/tenth_page.html'
+        window.localStorage.href = '../Page10/tenth_page.html'
     });
   });
   

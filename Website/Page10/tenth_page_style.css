@@ -34,14 +34,14 @@ body {
 }
 
 .instructions{
-    margin-right: 450px;
-margin-bottom: 20px;
-display: flex;
-justify-content: center;
-align-items: center;
-font-family: 'Dosis', 'sans-serif';
-font-size: 20px;
-color: darkgray;
+  margin-right: 450px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dosis', 'sans-serif';
+  font-size: 20px;
+  color: darkgray;
 }
 
 .progress {

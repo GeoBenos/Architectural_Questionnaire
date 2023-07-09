@@ -11,6 +11,8 @@ body {
 }
 
 .container {
+  height: 100%;
+  width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   animation: appear 1.4s ease-in forwards;
@@ -41,7 +43,7 @@ body {
 }
 
 .picture {
-  margin-left: 750px;
+  margin-left: 35%;
   margin-top: 30px;
   margin-bottom: 30px;
   overflow: hidden;
@@ -102,24 +104,6 @@ button {
   align-items: center;
 }
 
-/* button:after{
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 150px;
-  height: 2px;
-  background-color: #0087ca;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease;
-}
-
-button:hover:after{
-  transform: scaleX(1);
-  background-color: #000;
-  transform-origin: bottom left;
-} */
 button:hover {
   background-color: #c88d6f;
 }

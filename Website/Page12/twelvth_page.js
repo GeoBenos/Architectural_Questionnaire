@@ -1,12 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const scrollIndicators = document.querySelectorAll('.scroll-indicator-top, .scroll-indicator-bottom');
-    const nextPage = document.getElementById('right');
-    const prevPage = document.getElementById('left');
     const gallery = document.querySelector('.gallery');
     const pictures = gallery.querySelectorAll('.picture');  
     const progress = document.querySelector('.progress');
-    var inputField = document.getElementById("inputField");
-    var otherButton = document.querySelector(".other");
     const currentPage = 12;
     const totalPages = 31;
     const progressPercentage = (currentPage-1)/(totalPages-1)*100;
@@ -15,16 +10,54 @@ document.addEventListener('DOMContentLoaded', function() {
   
     document.documentElement.style.scrollBehavior = 'smooth';
   
-    if (StoredUserName !== null && StoredUserName !== '') {
-      userNameElement.textContent = StoredUserName;
+
+    let pageTwelveAnswers = {}; // Define pageNineAnswers variable in the outer scope
+    const nextPageButton = document.getElementById('nextPage');
+  
+    function SaveUserAnswers() {
+      pageTwelveAnswers = {};
+      var twelvthPageTitle = document.querySelector('.twelvth_page_title').innerText.trim();
+  
+      selectedPictures_twelveth_page = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
+      const selectedNames = selectedPictures_twelveth_page.map(picture => picture.querySelector('.text').innerText.trim());
+      console.log(selectedNames);
+      console.log(selectedPictures_twelveth_page);
+      selectedNames.forEach(function(name, index) {
+        pageTwelveAnswers[twelvthPageTitle + ': user clicked images' + (index + 1)] = name;
+      });
+  
+      var answerInput = document.getElementById('inputField');
+      var userInput = answerInput.value.trim();
+  
+      if (userInput !== "") {
+        pageTwelveAnswers[twelvthPageTitle + ': user input'] = userInput;
+      }
+  
+      var jsonAnswers = JSON.stringify(pageTwelveAnswers);
+      localStorage.setItem('Page 12 answers', jsonAnswers);
+      console.log(jsonAnswers);
+    }
+  
+    function UserInput() {
+      var ninthPageTitle = document.querySelector('.twelvth_page_title').innerText.trim();
+  
+      var answerInput = document.getElementById('inputField');
+      var userInput = answerInput.value.trim();
+  
+      if (userInput !== "") {
+        pageTwelveAnswers[ninthPageTitle + ': user input'] = userInput;
+      }
+  
+      var jsonAnswers = JSON.stringify(pageTwelveAnswers);
+      localStorage.setItem('Page 12 answers', jsonAnswers);
+      console.log(jsonAnswers);
     }
   
     let selectedPictures = [];
     pictures.forEach(function(picture) {
       const checkmark = picture.querySelector('.checkmark')
-      
+  
       picture.addEventListener('click', function() {
-        // Toggle the selected class on the clicked picture
         if (picture.classList.contains('selected')) {
           picture.classList.remove('selected');
           checkmark.classList.toggle('show')
@@ -49,43 +82,31 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedPictures.push(picture);
           }
         }
+  
+        var answerInput = document.getElementById('inputField');
+        var userInput = answerInput.value.trim();
+        if (selectedPictures.length === 0 && userInput !== "") {
+          UserInput();
+        } else {
+          SaveUserAnswers();
+        }
+  
         setTimeout(function() {
-        checkmark.classList.toggle('animate');
+          checkmark.classList.toggle('animate');
         }, 10);
       });
     });
   
-  // function showInputField() {
-
-  //   if (inputField.style.opacity === "" || inputField.style.opacity === "0") {
-  //     inputField.style.opacity = "1";
-  //   } else {
-  //     inputField.style.opacity = "0";
-  //   }
-  
-  //   otherButton.classList.toggle("active");
-  // };
-  
-    
-    
-
-  
-    nextPage.addEventListener('click', function() {
-      var answerInput = document.getElementById('answerInput');
-      var answer = answerInput.value;
-      localStorage.setItem('user answer for page 12', answer)
-      console.log(answer);
-      window.location.href = '/Questionnaire_website/Website/Page13/thirteenth_page.html'
+    nextPageButton.addEventListener('click', function() {
+      var answerInput = document.getElementById('inputField');
+      var userInput = answerInput.value.trim();
+      if (selectedPictures.length === 0 && userInput !== "") {
+        UserInput();
+      } else {
+        SaveUserAnswers();
+      }
+      window.location.href = '../Page13/thirteenth_page.html';
     });
-  
-    prevPage.addEventListener('click', function(){
-      window.localStorage.href = '/Questionnaire_website/Website/Page10/tenth_page.html'
-    });
-  
-    // nextPage.addEventListener('keyup'), function(event){
-    //   if(event.key === 'ArrowRight') {
-    //     window.location.href = 'third_page.html'
-    //   }
-    // }
   });
+  
   

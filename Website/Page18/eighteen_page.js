@@ -7,18 +7,32 @@ document.addEventListener('DOMContentLoaded', function() {
   
     progress.style.width = progressPercentage + "%";
   
+    function SaveUserAnswers(value) {
+      var pageEighteenAnswers = {};
+    
+      // Get the fifth_page_title element
+      var eighteenPageTitle = document.querySelector('.third_page_question').innerText.trim();
+  
+      pageEighteenAnswers[eighteenPageTitle+" "] = value
+  
+    
+      // Convert the userAnswers object to JSON
+      var jsonAnswers_pageEight = JSON.stringify(pageEighteenAnswers);
+    
+      // Store the JSON data in the localStorage
+      localStorage.setItem('page 18 answers', jsonAnswers_pageEight);
+      console.log(jsonAnswers_pageEight);
+    };  
+
     choices.forEach(function(choice) {
       choice.addEventListener('click', function() {
         const selectedValue = this.value;
         localStorage.setItem('selectedValue', selectedValue);
         console.log("Selected value in Page 18: " + selectedValue);
+        SaveUserAnswers(selectedValue);
         setTimeout(() => {
-          window.location.href = '/Questionnaire_website/Website/Page19/nineteen_page.html'; // Automatically proceed to the fourth page
+          window.location.href = '../Page19/nineteen_page.html'; // Automatically proceed to the fourth page
         }, 500); // Delay for 0.5 second before advancing to the next page
       });
     });
-
-    prevPage.addEventListener('click', function(){
-      window.localStorage.href = '/Questionnaire_website/Website/Page17/seventeenth_page.html'
-      });
   });

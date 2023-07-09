@@ -10,16 +10,29 @@ body {
 }
 
 .instructions{
-    margin-right: 730px;
-    margin-top: 40px;
-    margin-bottom: -90px;
+    position: absolute;
+    top: 200px;
+    left: 250px;
     display: flex;
     justify-content: center;
-    align-items: center;
     font-family: 'Dosis';
     font-size: 22px;
     color: darkgray;
     font-weight: normal;
+}
+
+.twentyseven_page_question {
+  position: absolute;
+  top: 10%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  font-family: 'Dosis';
+  font-size: 30px;
+  padding-top: 10px;
+  padding-bottom: 4px;
+  font-weight: bold;
+  opacity: 0;
+  animation: appear 1.4s ease-in forwards;
 }
 
 .progress-bar {
@@ -58,14 +71,12 @@ body {
 }
 
 .gallery {
-    margin-left: 470px;
-    margin-top: 90px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(400px, 1fr));
+  margin-top: 200px;
+  display: flex;
   grid-gap: 50px;
   padding: 20px;
-  padding-left: 20px;
-  justify-items: flex-start;
+  padding-left: 7%;
+  justify-content: center;
   opacity: 0;
   animation: appear 1.4s ease-in forwards;
 }
@@ -85,7 +96,7 @@ body {
   border-radius: 10px;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
-  width: 450px;
+  width: 500px;
 }
 
 .picture:hover {
@@ -94,28 +105,17 @@ body {
 }
 
 .picture img {
-  width: 450px;
-  height: 300px;
+  width: 500px;
+  height: 334px;
 }
 
 .text {
-    font-size: 26px;
-    font-family: 'Dosis';
+  font-size: 26px;
+  font-family: 'Dosis';
   background-color: #fff;
   padding: 10px;
   width: 390px;
   font-weight: bold;
-}
-
-.twentyseven_page_question {
-  font-family: 'Dosis';
-  font-size: 30px;
-  padding-left: 500px;
-  padding-top: 130px;
-  padding-bottom: 0px;
-  font-weight: bold;
-  opacity: 0;
-  animation: appear 1.4s ease-in forwards;
 }
 
 /* Check mark */
@@ -175,7 +175,6 @@ body {
 .checkmark.animate {
   animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
   animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
-  
 }
 
 

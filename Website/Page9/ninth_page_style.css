@@ -109,7 +109,7 @@ body {
 .ninth_page_title {
   font-family: 'Dosis';
   font-size: 30px;
-  padding-left: 550px;
+  padding-left: 28%;
   padding-top: 30px;
   padding-bottom: 4px;
   font-weight: bold;
@@ -163,7 +163,7 @@ body {
 
 .input-field {
   font-family: "Dosis";
-  margin-left: 1000px;
+  margin-left: 50%;
   margin-top: 50px;
   width: 350px;
   border: none;

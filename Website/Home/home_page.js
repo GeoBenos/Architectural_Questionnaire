@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
           const userName = nameInput.value.trim();
           localStorage.setItem('userName', userName);
-          window.location.href = '/Questionnaire_website/Website/Page2/second_page.html';
+          window.location.href = '../Page2/second_page.html';
         }
       }
     });
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         const userName = nameInput.value.trim();
         localStorage.setItem('userName', userName);
-        window.location.href = '/Questionnaire_website/Website/Page2/second_page.html';
+        window.location.href = '../Page2/second_page.html';
       }
     });
   

@@ -12,7 +12,27 @@ document.addEventListener('DOMContentLoaded', function() {
     progress.style.width = progressPercentage + "%";
   
     document.documentElement.style.scrollBehavior = 'smooth';
+
+    let pageSixteenAnswers = {};
+
+    function SaveUserAnswers() {
+      pageSixteenAnswers = {};
+      var sixteenPageTitle = document.querySelector('.sixteen_page_question').innerText.trim();
   
+      selectedPictures_sixteenth_page = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
+      const selectedNames = selectedPictures_sixteenth_page.map(picture => picture.querySelector('.text').innerText.trim());
+      console.log(selectedNames);
+      console.log(selectedPictures_sixteenth_page);
+      selectedNames.forEach(function(name, index) {
+        pageSixteenAnswers[sixteenPageTitle + ': user clicked images No.' + (index + 1)] = name;
+      });
+  
+      var jsonAnswers = JSON.stringify(pageSixteenAnswers);
+      localStorage.setItem('Page 16 answers', jsonAnswers);
+      console.log(jsonAnswers);
+    }
+
+
     let selectedPictures = [];
     pictures.forEach(function(picture) {
       const checkmark = picture.querySelector('.checkmark')
@@ -43,6 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedPictures.push(picture);
           }
         }
+
+        SaveUserAnswers();
+
         setTimeout(function() {
           checkmark.classList.toggle('animate');
         }, 10);
@@ -63,18 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   
-    nextPage.addEventListener('click', function() {
-      window.location.href = '/Questionnaire_website/Website/Page17/seventeenth_page.html'
+    nextPageButton.addEventListener('click', function() {
+      SaveUserAnswers();
+      window.location.href = '../Page17/seventeenth_page.html';
     });
-  
-    prevPage.addEventListener('click', function(){
-      window.localStorage.href = '/Questionnaire_website/Website/Page15/fifteenth_page.html'
-    });
-  
-    // nextPage.addEventListener('keyup'), function(event){
-    //   if(event.key === 'ArrowRight') {
-    //     window.location.href = 'third_page.html'
-    //   }
-    // }
   });
   

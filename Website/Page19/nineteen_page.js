@@ -12,12 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
     progress.style.width = progressPercentage + "%";
   
     messageContainer.classList.add('message-container');
-  
-    // if (StoredUserName !== null && StoredUserName !== '') {
-    //   userName.textContent = StoredUserName;
-    //   nextButton.disabled = false; // Enable the next button if username is stored
-    // }
-  
+
+    pageNineteenAnswers = {};
     answerInput.addEventListener('input', function() {
       if (answerInput.value.trim() !== '') {
         nextButton.disabled = false;
@@ -33,35 +29,17 @@ document.addEventListener('DOMContentLoaded', function() {
           displayMessage('Please enter your answer.');
         } else {
           const userAnswer = answerInput.value.trim();
-          localStorage.setItem('userAnswer', userAnswer);
-          window.location.href = 'twenty_page.html';
+          var nineteenPagetitle = document.getElementsByClassName("third_page_question").value;
+          pageNineteenAnswers[nineteenPagetitle + ": user input"] = userAnswer;
+          var jsonAnswers = JSON.stringify(pageNineteenAnswers);
+          localStorage.setItem('Page 19 answers', jsonAnswers);
+          console.log(jsonAnswers);
+          setTimeout(function() {
+            window.location.href = '../Page20/twenty_page.html';
+          }, 4000);
+          
         }
       }
     });
-  
-    nextButton.addEventListener('click', function() {
-      if (answerInput.value.trim() === '') {
-        displayMessage('Please enter your name.');
-      } else {
-        const userAnswer = answerInput.value.trim();
-        localStorage.setItem('userName', userAnswer);
-        window.location.href = 'twenty_page.html';
-      }
-    });
-
-    prevPage.addEventListener('click', function(){
-      window.localStorage.href = '/Questionnaire_website/Website/Page18/eighteenth_page.html'
-      });
-  
-    function displayMessage(text) {
-      messageContainer.textContent = text;
-      document.body.appendChild(messageContainer);
-      setTimeout(function() {
-        messageContainer.classList.add('fade-out');
-      }, 3000);
-      setTimeout(function() {
-        messageContainer.remove();
-      }, 4000);
-    }
   });
   

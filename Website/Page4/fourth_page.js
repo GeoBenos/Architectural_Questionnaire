@@ -87,10 +87,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   nextPage.addEventListener('click', function() {
     SaveUserAnswers();
-    window.location.href = '/Questionnaire_website/Website/Page5/fifth_page.html';
+    window.location.href = '../Page5/fifth_page.html';
   });
   
   prevPage.addEventListener('click', function(){
-    window.location.href = '/Questionnaire_website/Website/Page3/third_page.html';
+    window.location.href = '../Page3/third_page.html';
   });
 });

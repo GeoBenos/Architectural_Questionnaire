@@ -14,10 +14,26 @@ document.addEventListener('DOMContentLoaded', function() {
   
     messageContainer.classList.add('message-container');
   
-    // if (StoredUserName !== null && StoredUserName !== '') {
-    //   userName.textContent = StoredUserName;
-    //   nextButton.disabled = false; // Enable the next button if username is stored
-    // }
+    function SaveUserAnswers() {
+      var pageFifteenAnswers = {};
+
+      // Get the user input from the answerInput field
+      var fifteenPageTitle = document.querySelector('.fifteenth_page_question').innerText.trim();
+      var answerInput = document.getElementById('answerInput');
+      var userInput = answerInput.value.trim();
+  
+      // Add the user input to the JSON object
+      if (userInput !== "") {
+        pageFifteenAnswers[fifteenPageTitle + ': user input'] = userInput;
+      }
+  
+      // Convert the userAnswers object to JSON
+      var jsonAnswers = JSON.stringify(pageFifteenAnswers);
+  
+      // Store the JSON data in the localStorage
+      localStorage.setItem('Page 11 answers', jsonAnswers);
+      console.log(jsonAnswers);
+    };
   
     answerInput.addEventListener('input', function() {
       if (isNaN(answerInput.value.trim())===false && answerInput.value.trim!=null) {
@@ -29,25 +45,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   
     answerInput.addEventListener('keyup', function(event) {
+      var answerInput = document.getElementById('answerInput');
       if (event.key === 'Enter') {
         event.preventDefault();
         if (answerInput.value.trim() === '') {
-          displayMessage('Please enter your name.');
+          displayMessage('Please enter a number.');
         } else {
-          const bathrooms = answerInput.value.trim();
-          localStorage.setItem('userName', bathrooms);
-          window.location.href = '/Questionnaire_website/Website/Page16/sixteenth_page.html';
+          const bedrooms = answerInput.value.trim();
+          SaveUserAnswers();
+          localStorage.setItem('userName', bedrooms);
+          window.location.href = '../Page16/sixteenth_page.html';
         }
       }
     });
   
     nextButton.addEventListener('click', function() {
       if (answerInput.value.trim() === '') {
-        displayMessage('Please enter an answer.');
+        displayMessage('Please enter a number.');
       } else {
         const bedrooms = answerInput.value.trim();
+        SaveUserAnswers();
         localStorage.setItem('userName', bedrooms);
-        window.location.href = '/Questionnaire_website/Website/Page16/sixteenth_page.html';
+        window.location.href = '../Page16/sixteenth_page.html'; 
       }
     });
   
@@ -63,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     prevPage.addEventListener('click', function(){
-        window.localStorage.href = '/Questionnaire_website/Website/Page14/fourteenth_page.html'
+        window.localStorage.href = '../Page14/fourteenth_page.html'
     });
   });
   

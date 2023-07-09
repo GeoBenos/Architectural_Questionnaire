@@ -71,8 +71,19 @@ body {
    }
 }
 
+.instructions{
+  margin-left: 250px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  display: flex;
+  font-family: 'Dosis';
+  font-size: 22px;
+  color: darkgray;
+  font-weight: normal;
+}
+
 .picture {
-  position: flex;
+  position: relative;
   border: 1px solid #ccc;
   border-radius: 10px;
   overflow: hidden;
@@ -102,26 +113,19 @@ body {
 }
 
 
-.fourth_page_title {
+.twelvth_page_title {
   font-family: 'Dosis';
   font-size: 30px;
-  padding-left: 680px;
-  padding-top: 80px;
+  padding-left: 33%;
+  padding-top: 20px;
   padding-bottom: 15px;
   font-weight: bold;
   opacity: 0;
   animation: appear 1.4s ease-in forwards;
 }
 
-.second_page_question {
-  font-family: 'Dosis';
-  font-size: 24px;
-  margin-bottom: 25px;
-  font-weight: bold;
-}
-
 .other {
-  margin-top: 100px;
+  margin-top: 50px;
   margin-right: 180px;
   width: 150px;
   height: 150px;
@@ -159,7 +163,7 @@ body {
 
 .input-field {
   font-family: "Dosis";
-  margin-left: 960px;
+  margin-left: 50%;
   margin-top: 50px;
   width: 350px;
   border: none;

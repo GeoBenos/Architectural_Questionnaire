@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // const userName = document.getElementById('userName');
-    // const StoredUserName = localStorage.getItem('userName');
     const answerInput = document.getElementById('answer');
     const nextButton = document.getElementById('nextButton');
     const progress = document.querySelector('.progress');
@@ -12,11 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     progress.style.width = progressPercentage + "%";
   
     messageContainer.classList.add('message-container');
-  
-    // if (StoredUserName !== null && StoredUserName !== '') {
-    //   userName.textContent = StoredUserName;
-    //   nextButton.disabled = false; // Enable the next button if username is stored
-    // }
   
     answerInput.addEventListener('input', function() {
       if (answerInput.value.trim() !== '') {
@@ -34,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
           const userAnswer = answerInput.value.trim();
           localStorage.setItem('userAnswer', userAnswer);
-          window.location.href = '/Questionnaire_website/Website/Page24/twentyfour_page.html';
+          window.location.href = '../Page24/twentyfour_page.html';
         }
       }
     });
@@ -45,12 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         const userAnswer = answerInput.value.trim();
         localStorage.setItem('userName', userAnswer);
-        window.location.href = '/Questionnaire_website/Website/Page24/twentyfour_page.html';
+        window.location.href = '../Page24/twentyfour_page.html';
       }
     });
 
     prevPage.addEventListener('click', function(){
-      window.localStorage.href = '/Questionnaire_website/Website/Page22/twentytwo_page.html'
+      window.localStorage.href = '../Page22/twentytwo_page.html'
       });
   
     function displayMessage(text) {

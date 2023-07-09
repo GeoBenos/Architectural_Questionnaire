@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const userNameElement = document.getElementById('userName');
   const scrollIndicators = document.querySelectorAll('.scroll-indicator-top, .scroll-indicator-bottom');
   const StoredUserName = localStorage.getItem('userName');
-  const nextPage = document.getElementById('right');
-  const prevPage = document.getElementById('left');
   const gallery = document.querySelector('.gallery');
   const pictures = gallery.querySelectorAll('.picture');  
   const progress = document.querySelector('.progress');
@@ -13,7 +11,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
   progress.style.width = progressPercentage + "%";
 
-  document.documentElement.style.scrollBehavior = 'smooth';
+  const nextPageButton = document.getElementById('nextPage');
+  let page2Answers = {}
+  function SaveUserAnswers() {
+    page2Answers = {};
+    var page2Title = document.querySelector('.second_page_question').innerText.trim();
+
+    selectedPictures_twelveth_page = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
+    const selectedNames = selectedPictures_twelveth_page.map(picture => picture.querySelector('.text').innerText.trim());
+    console.log(selectedNames);
+    console.log(selectedPictures_twelveth_page);
+    selectedNames.forEach(function(name, index) {
+      page2Answers[page2Title + ': user clicked images' + (index + 1)] = name;
+    });
+
+    var jsonAnswers = JSON.stringify(page2Answers);
+    localStorage.setItem('Page 2 answers', jsonAnswers);
+    console.log(jsonAnswers);
+  };
+
 
   if (StoredUserName !== null && StoredUserName !== '') {
     userNameElement.textContent = StoredUserName;
@@ -27,11 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
       // Toggle the selected class on the clicked picture
       if (picture.classList.contains('selected')) {
         picture.classList.remove('selected');
-        checkmark.classList.toggle('show')
+        checkmark.classList.toggle('show');
         const index = selectedPictures.indexOf(picture);
         if (index !== -1) {
           selectedPictures.splice(index, 1);
-        }
+        };
       } else {
         if (selectedPictures.length < 5) {
           picture.classList.add('selected');
@@ -47,8 +63,11 @@ document.addEventListener('DOMContentLoaded', function() {
           }
           picture.classList.add('selected');
           selectedPictures.push(picture);
-        }
-      }
+        };
+      };
+
+      SaveUserAnswers();
+
       setTimeout(function() {
         checkmark.classList.toggle('animate');
       }, 10);
@@ -69,17 +88,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // nextPage.addEventListener('click', function() {
-  //   window.location.href = 'third_page.html'
-  // });
+  nextPageButton.addEventListener('click', function() {
+    SaveUserAnswers();
+    window.location.href = '../Page3/third_page.html';
+  });
 
   // prevPage.addEventListener('click', function(){
-  //   window.localStorage.href = 'home_page.html'
+  //   window.localStorage.href = '../Page13/thirteenth_page.html'
   // });
 
-  // nextPage.addEventListener('keyup'), function(event){
-  //   if(event.key === 'ArrowRight') {
-  //     window.location.href = 'third_page.html'
-  //   }
-  // }
+
+
 });

@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&family=Dosis:wght@200&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
 
+.picture_1:hover,
+.picture:hover {
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -10,16 +16,29 @@ body {
 }
 
 .instructions{
-    margin-right: 730px;
-    margin-top: 40px;
-    margin-bottom: -90px;
+    position: absolute;
+    top: 200px;
+    left: 100px;
     display: flex;
     justify-content: center;
-    align-items: center;
     font-family: 'Dosis';
     font-size: 22px;
     color: darkgray;
     font-weight: normal;
+}
+
+.twentyeight_page_question {
+  position: absolute;
+  top: 10%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  font-family: 'Dosis';
+  font-size: 30px;
+  padding-top: 10px;
+  padding-bottom: 4px;
+  font-weight: bold;
+  opacity: 0;
+  animation: appear 1.4s ease-in forwards;
 }
 
 .progress-bar {
@@ -58,14 +77,12 @@ body {
 }
 
 .gallery {
-    margin-left: 200px;
-    margin-top: 90px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 2fr));
+  margin-top: 200px;
+  display: flex;
   grid-gap: 50px;
   padding: 20px;
-  padding-left: 20px;
-  justify-items: flex-start;
+  padding-left: 7%;
+  justify-content: center;
   opacity: 0;
   animation: appear 1.4s ease-in forwards;
 }
@@ -85,52 +102,39 @@ body {
   border-radius: 10px;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
-  width: 400px;
+  width: auto;
 }
 
-.picture_1:hover,
+.picture_1 {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  width: 251px;
+}
+
 .picture:hover {
   cursor: pointer;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.picture_1{
-    margin-left: 50px;
-    position: relative;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
-  width: 250px;
-}
-
 .picture_1 img{
-    width: 250px;
-    height: 300px;
+  width: 251px;
+  height: 334px;
 }
 .picture img {
-  width: 400px;
-  height: 300px;
+  width: 500px;
+  height: 334px;
 }
 
 .text {
-    font-size: 26px;
-    font-family: 'Dosis';
+  font-size: 26px;
+  font-family: 'Dosis';
   background-color: #fff;
   padding: 10px;
   width: 390px;
   font-weight: bold;
-}
-
-.twentyseven_page_question {
-  font-family: 'Dosis';
-  font-size: 30px;
-  padding-left: 500px;
-  padding-top: 130px;
-  padding-bottom: 0px;
-  font-weight: bold;
-  opacity: 0;
-  animation: appear 1.4s ease-in forwards;
 }
 
 /* Check mark */
@@ -190,7 +194,6 @@ body {
 .checkmark.animate {
   animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
   animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
-  
 }
 
 
@@ -276,4 +279,13 @@ body {
   border-right: 0.5em solid #c88d6f;
   border-bottom: 0.5em solid #c88d6f;
   border-left: 0.5em solid #c88d6f;
+}
+
+.text {
+    font-size: 26px;
+    font-family: 'Dosis';
+  background-color: #fff;
+  padding: 10px;
+  width: 390px;
+  font-weight: bold;
 }
