@@ -11,7 +11,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![MIT License][license-shield]](https://github.com/GeoBenos/Questionnaire_website/blob/main/LICENSE.txt)
+[![MIT License][license-shield]](https://github.com/GeoBenos/Questionnaire_website/main/LICENSE.txt)
 [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/george-benos-4b87a3234)
 
 
