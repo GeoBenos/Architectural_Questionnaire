@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function SaveUserAnswers() {
     page29Answers = {};
-    var page29title = document.querySelector('.twentyseven_page_question').innerText.trim();
+    var page29title = document.querySelector('.twentynine_page_question').innerText.trim();
     let selectedPictures_twelveth_page = [];
     selectedPictures_twelveth_page = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
     const selectedNames = selectedPictures_twelveth_page.map(picture => picture.querySelector('.text').innerText.trim());
