@@ -1,13 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // const userName = document.getElementById('userName');
-    // const StoredUserName = localStorage.getItem('userName');
     const answerInput = document.getElementById('answerInput');
     const nextButton = document.getElementById('nextButton');
     const messageContainer = document.createElement('div');
     const progress = document.querySelector('.progress');
     const prevPage = document.getElementById('left');
     const currentPage = 15;
-    const totalPages = 31;
+    const totalPages = 30;
     const progressPercentage = (currentPage-1)/(totalPages-1)*100;
   
     progress.style.width = progressPercentage + "%";
@@ -31,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var jsonAnswers = JSON.stringify(pageFifteenAnswers);
   
       // Store the JSON data in the localStorage
-      localStorage.setItem('Page 11 answers', jsonAnswers);
+      localStorage.setItem('Page 15 answers', jsonAnswers);
       console.log(jsonAnswers);
     };
   
@@ -48,12 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
       var answerInput = document.getElementById('answerInput');
       if (event.key === 'Enter') {
         event.preventDefault();
-        if (answerInput.value.trim() === '') {
+        if (answerInput.value.trim() === '' || isNaN(answerInput.value.trim())===true) {
           displayMessage('Please enter a number.');
         } else {
-          const bedrooms = answerInput.value.trim();
           SaveUserAnswers();
-          localStorage.setItem('userName', bedrooms);
           window.location.href = '../Page16/sixteenth_page.html';
         }
       }
@@ -63,9 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (answerInput.value.trim() === '') {
         displayMessage('Please enter a number.');
       } else {
-        const bedrooms = answerInput.value.trim();
         SaveUserAnswers();
-        localStorage.setItem('userName', bedrooms);
         window.location.href = '../Page16/sixteenth_page.html'; 
       }
     });

@@ -6,11 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const messageContainer = document.createElement('div');
   
     messageContainer.classList.add('message-container');
-  
-    // if (StoredUserName !== null && StoredUserName !== '') {
-    //   userName.textContent = StoredUserName;
-    //   nextButton.disabled = false; // Enable the next button if username is stored
-    // }
+
+    localStorage.clear();
   
     nameInput.addEventListener('input', function() {
       if (nameInput.value.trim() !== '') {

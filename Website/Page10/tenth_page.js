@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const progress = document.querySelector('.progress');
     const choices = document.querySelectorAll('button');
     const currentPage = 10;
-    const totalPages = 31;
+    const totalPages = 30;
     const progressPercentage = (currentPage - 1) / (totalPages - 1) * 100;
   
     progress.style.width = progressPercentage + "%";
@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
   
     
       // Convert the userAnswers object to JSON
-      var jsonAnswers_pageTen = JSON.stringify(pageTenAnswers);
+      var jsonAnswers = JSON.stringify(pageTenAnswers);
     
       // Store the JSON data in the localStorage
-      localStorage.setItem('page 10 answers', jsonAnswers_pageTen);
-      console.log(jsonAnswers_pageTen);
+      localStorage.setItem('page 10 answers', jsonAnswers);
+      console.log(jsonAnswers);
     };
 
 

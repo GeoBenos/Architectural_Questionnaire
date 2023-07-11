@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       setTimeout(function() {
         checkmark.classList.toggle('animate');
-      }, 10);
+      }, 100);
     });
   });
 

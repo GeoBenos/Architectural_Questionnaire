@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var Page23title = document.querySelector('.third_page_question').innerHTML.trim();
         page23Answers[Page23title + ": user input"] = answerInput.value.trim();
         var jsonAnswers = JSON.stringify(page23Answers);
-        localStorage.setItem('Page 19 answers', jsonAnswers);
+        localStorage.setItem('Page 23 answers', jsonAnswers);
         console.log(jsonAnswers);
       }
     });

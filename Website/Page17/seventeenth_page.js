@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const choices = document.querySelectorAll('button');
     const answer = document.getElementById('answer');
     const currentPage = 17;
-    const totalPages = 31;
+    const totalPages = 30;
     const userInput = answer.value.trim();
     const progressPercentage = (currentPage - 1) / (totalPages - 1) * 100;
   
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log(jsonAnswers_pageSeventeen);
   
       var jsonAnswers = JSON.stringify(pageSeventeenAnswers);
-      localStorage.setItem('Page 9 answers', jsonAnswers);
+      localStorage.setItem('Page 17 answers', jsonAnswers);
       console.log(jsonAnswers);
       };
   

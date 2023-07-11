@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const scrollIndicators = document.querySelectorAll('.scroll-indicator-top, .scroll-indicator-bottom');
     const gallery = document.querySelector('.gallery');
     const pictures = gallery.querySelectorAll('.picture, .picture_1');  
     const progress = document.querySelector('.progress');
@@ -26,6 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var jsonAnswers = JSON.stringify(page29Answers);
     localStorage.setItem('Page 29 answers', jsonAnswers);
+    if (currentPage===totalPages){
+      const alljsonAnswers = JSON.stringify()
+    }
     console.log(jsonAnswers);
   };
 

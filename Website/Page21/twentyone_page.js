@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const pictures = gallery.querySelectorAll('.picture');  
     const progress = document.querySelector('.progress');
     const currentPage = 21;
-    const totalPages = 31;
+    const totalPages = 30;
     const progressPercentage = (currentPage-1)/(totalPages-1)*100;
   
     progress.style.width = progressPercentage + "%";
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   
       var jsonAnswers = JSON.stringify(page21Answers);
-      localStorage.setItem('Page 13 answers', jsonAnswers);
+      localStorage.setItem('Page 21 answers', jsonAnswers);
       console.log(jsonAnswers);
     }
 

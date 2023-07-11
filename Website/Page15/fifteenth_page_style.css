@@ -87,6 +87,10 @@ button:disabled {
   cursor: not-allowed;
 }
 
+button:hover{
+  background-color: #c88d6f;
+}
+
 div#bedroomNumber {
     display: none;
   }

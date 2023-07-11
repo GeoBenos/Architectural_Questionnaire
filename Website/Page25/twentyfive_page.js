@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     var jsonAnswers = JSON.stringify(page25Answers);
-    localStorage.setItem('Page 24 answers', jsonAnswers);
+    localStorage.setItem('Page 25 answers', jsonAnswers);
     console.log(jsonAnswers);
   };
 

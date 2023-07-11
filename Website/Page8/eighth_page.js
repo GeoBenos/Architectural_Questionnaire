@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
   
     
       // Convert the userAnswers object to JSON
-      var jsonAnswers_pageEight = JSON.stringify(pageEightAnswers);
+      var jsonAnswers = JSON.stringify(pageEightAnswers);
     
       // Store the JSON data in the localStorage
-      localStorage.setItem('page 8 answers', jsonAnswers_pageEight);
-      console.log(jsonAnswers_pageEight);
+      localStorage.setItem('page 8 answers', jsonAnswers);
+      console.log(jsonAnswers);
     };
   
     choices.forEach(function(choice) {
