@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&family=Dosis:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    scrollbar-width: thin; /* Firefox */
+    overflow-y: hidden;
+    text-align: center;
+  }
+
+.title{
+    position: absolute;
+    font-family: "Dosis";
+    font-size: 30px;
+    font-weight:600;
+}
+
+#website_logo{
+    position: absolute;
+    top: 20%;
+    height: 350px;
+
+}
+
+.socials{
+    max-width: 100%;
+    width: 20px;
+    height: 20px;
+}

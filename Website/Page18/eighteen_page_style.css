@@ -85,24 +85,6 @@ button {
   font-weight:600;
 }
 
-/* button:after{
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 150px;
-  height: 2px;
-  background-color: #0087ca;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease;
-}
-
-button:hover:after{
-  transform: scaleX(1);
-  background-color: #000;
-  transform-origin: bottom left;
-} */
 button:hover {
   background-color: #c88d6f;
 }
@@ -112,8 +94,7 @@ button:focus {
 
 }
 
-.left,
-.right {
+.left {
   position: fixed;
   bottom: 0;
   width: 45px;
@@ -124,11 +105,6 @@ button:focus {
 
 .left {
   right: 6em;
-  bottom: 20px;
-}
-
-.right {
-  right: 28px;
   bottom: 20px;
 }
 
@@ -145,29 +121,8 @@ button:focus {
   -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
-.right:after {
-  content: "";
-  display: inline-block;
-  margin-top: 0.8em;
-  margin-left: 0.6em;
-  width: 14px;
-  height: 14px;
-  border-top: 0.5em solid #333;
-  border-right: 0.5em solid #333;
-  -moz-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
 
 .left:hover {
-  cursor: pointer;
-  border-top: 0.5em solid #c88d6f;
-  border-right: 0.5em solid #c88d6f;
-  border-bottom: 0.5em solid #c88d6f;
-  border-left: 0.5em solid #c88d6f;
-}
-
-.right:hover{
   cursor: pointer;
   border-top: 0.5em solid #c88d6f;
   border-right: 0.5em solid #c88d6f;

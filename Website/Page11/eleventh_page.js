@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var pageElevenAnswers = {};
 
       // Get the user input from the answerInput field
-      var elevenPageTitle = document.getElementsByClassName('eleventh_page_question').value;
+      var elevenPageTitle = document.querySelector('.eleventh_page_question').innerHTML.trim();
       var answerInput = document.getElementById('answerInput');
       var userInput = answerInput.value.trim();
   
@@ -52,9 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (answerInput.value.trim() === '') {
           displayMessage('Please enter a number.');
         } else {
-          const bedrooms = answerInput.value.trim();
           SaveUserAnswers();
-          localStorage.setItem('userName', bedrooms);
           window.location.href = '../Page12/twelvth_page.html';
         }
       }
@@ -64,9 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (answerInput.value.trim() === '') {
         displayMessage('Please enter a number.');
       } else {
-        const bedrooms = answerInput.value.trim();
         SaveUserAnswers();
-        localStorage.setItem('userName', bedrooms);
         window.location.href = '../Page12/twelvth_page.html'; 
       }
     });

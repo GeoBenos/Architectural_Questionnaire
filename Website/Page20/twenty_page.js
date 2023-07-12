@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(localStorage);
         setTimeout(() => {
           window.location.href = '../Page21/twentyone_page.html'; // Automatically proceed to the fourth page
-        }, 10000); // Delay for 1 second before advancing to the next page
+        }, 500); // Delay for 1 second before advancing to the next page
       });
     });
 

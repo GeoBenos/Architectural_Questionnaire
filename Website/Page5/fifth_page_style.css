@@ -108,8 +108,7 @@ button:focus {
 
 }
 
-.left,
-.right {
+.left {
   position: fixed;
   bottom: 0;
   width: 45px;
@@ -120,11 +119,6 @@ button:focus {
 
 .left {
   right: 6em;
-  bottom: 20px;
-}
-
-.right {
-  right: 28px;
   bottom: 20px;
 }
 
@@ -141,29 +135,8 @@ button:focus {
   -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
-.right:after {
-  content: "";
-  display: inline-block;
-  margin-top: 0.8em;
-  margin-left: -0.2em;
-  width: 14px;
-  height: 14px;
-  border-top: 0.5em solid #333;
-  border-right: 0.5em solid #333;
-  -moz-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
 
 .left:hover {
-  cursor: pointer;
-  border-top: 0.5em solid #c88d6f;
-  border-right: 0.5em solid #c88d6f;
-  border-bottom: 0.5em solid #c88d6f;
-  border-left: 0.5em solid #c88d6f;
-}
-
-.right:hover{
   cursor: pointer;
   border-top: 0.5em solid #c88d6f;
   border-right: 0.5em solid #c88d6f;

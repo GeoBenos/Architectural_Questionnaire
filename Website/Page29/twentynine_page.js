@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
   let page29Answers = {}; // Define page29Answers variable in the outer scope
   const nextPageButton = document.getElementById('nextPage');
 
+  console.log(localStorage);
+
   function SaveUserAnswers() {
     page29Answers = {};
     var page29title = document.querySelector('.twentynine_page_question').innerText.trim();
