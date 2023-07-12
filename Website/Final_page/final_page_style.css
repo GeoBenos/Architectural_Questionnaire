@@ -1,42 +1,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&family=Dosis:wght@200&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 
 body {
-    margin: 0;
-    padding: 0;
-    scrollbar-width: thin; /* Firefox */
-    overflow-y: hidden;
-    text-align: center;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin; /* Firefox */
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  font-family: "Dosis";
+  padding-top: 80px;
+  font-size: 35px;
+  font-weight: 600;
+  opacity: 0; /* Initially hidden */
+  animation: fade-in 1s ease-in forwards; /* Smooth fade-in animation */
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
   }
-
-.title{
-    text-align: center;
-    font-family: "Dosis";
-    padding-top: 80px;
-    font-size: 35px;
-    font-weight:600;
+  100% {
+    opacity: 1;
+  }
 }
 
-#website_logo{
-    padding-top: 70px;
-    text-align: center;
-    height: 400px;
-
+#website_logo {
+  padding-top: 120px;
+  text-align: center;
+  height: 300px;
+  opacity: 0; /* Initially hidden */
+  animation: fade-in 1s ease-in-out 1s forwards; /* Smooth fade-in animation with delay */
 }
 
-.socials{
-    padding-top: 50px;
-    text-align: center;
-    max-width: 100%;
+.fa-instagram {
+  padding: 20px;
+  padding-top: 50px;
+  font-size: 50px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  opacity: 0; /* Initially hidden */
+  transition: color 1s, transform 1s; /* Smooth color and transform transition */
+  animation: slide-in-instagram 1s ease-in-out 2s forwards; /* Slide-in animation with delay */
 }
 
-.instagram{
-    padding-right: 20px;
+.fa-facebook {
+  padding: 20px;
+  padding-top: 50px;
+  font-size: 45px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  opacity: 0; /* Initially hidden */
+  transition: color 1s, transform 1s; /* Smooth color and transform transition */
+  animation: slide-in-facebook 1s ease-in-out 2.5s forwards; /* Slide-in animation with delay */
 }
 
-.message{
-    text-align: center;
-    font-family: "Dosis";
-    font-size: 25px;
-    padding-top: 20px;
+@keyframes slide-in-instagram {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-facebook {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message {
+  text-align: center;
+  font-family: "Dosis";
+  font-size: 25px;
+  font-weight: 600;
+  padding-top: 20px;
+  opacity: 0; /* Initially hidden */
+  animation: fade-in 1s ease-in-out 3s forwards; /* Smooth fade-in animation with delay */
+}
+
+.fa:hover {
+  color: #9c6d55 !important;
 }
