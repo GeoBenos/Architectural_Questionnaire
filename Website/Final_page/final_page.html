@@ -2,7 +2,7 @@
 <html>
 <head>
   <title> Siaini - Architectural Questionnaire </title>
-  <link rel="stylesheet" type="text/css" href="../Final_page/final_page_style.css">
+  <link rel="stylesheet" type="text/css" href="final_page_style.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap">
 </head>
 <body>
@@ -23,16 +23,16 @@
     </div>
     <div class="message"> In the meantime you can check our socials and the official website... 
     </div>
-  </div> 
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
+  <script src="../Final_page/pdf_answers.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     $(document).ready(() => {
       $.ajax({
         type: 'GET',
-        url: 'http://127.0.0.1:5500/send-email',
-        xhrFields: {
-          withCredentials: true
-        },
+        url: 'http://localhost:5500/send-email',
         success: () => {
           console.log('Email sent successfully');
         },

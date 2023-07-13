@@ -1,3 +1,4 @@
+let alljsonAnswers = {};
 document.addEventListener('DOMContentLoaded', function() {
     const gallery = document.querySelector('.gallery');
     const pictures = gallery.querySelectorAll('.picture, .picture_1');  
@@ -8,10 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
   
     progress.style.width = progressPercentage + "%";
 
+  
+  
+
   let page29Answers = {}; // Define page29Answers variable in the outer scope
   const nextPageButton = document.getElementById('nextPage');
 
   console.log(localStorage);
+
 
   function SaveUserAnswers() {
     page29Answers = {};
@@ -26,10 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     var jsonAnswers = JSON.stringify(page29Answers);
+
     localStorage.setItem('Page 29 answers', jsonAnswers);
-    if (currentPage===totalPages){
-      const alljsonAnswers = JSON.stringify()
+    if (currentPage + 1 === totalPages){
+      alljsonAnswers = JSON.stringify(localStorage)
     }
+
     console.log(jsonAnswers);
   };
 
@@ -64,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
       };
 
       SaveUserAnswers();
+      
 
       setTimeout(function() {
         checkmark.classList.toggle('animate');
