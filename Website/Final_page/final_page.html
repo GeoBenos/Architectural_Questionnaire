@@ -23,7 +23,24 @@
     </div>
     <div class="message"> In the meantime you can check our socials and the official website... 
     </div>
-  </div>
-  <script data-main="../Mailer/mail_app.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  </div> 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(() => {
+      $.ajax({
+        type: 'GET',
+        url: 'http://127.0.0.1:5500/send-email',
+        xhrFields: {
+          withCredentials: true
+        },
+        success: () => {
+          console.log('Email sent successfully');
+        },
+        error: (xhr, status, error) => {
+          console.error('Error sending email:', error);
+        }
+      });
+    });
+  </script>
 </body>
 </html>

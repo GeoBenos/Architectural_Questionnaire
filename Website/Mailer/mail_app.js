@@ -1,29 +1,30 @@
-function sendEmailWithQuestionnaireResults() {
-    console.log(localStorage)
-    require(['nodemailer'], function(nodemailer) {
-      const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-          user: "benosgeorg13@gmail.com",
-          pass: "bpvfjwxsgqylmzsw",
-        }
-      });
-  
-      const options = {
-        from: "benosgeorg13@gmail.com",
-        to: "benos.geo@gmail.com",
-        subject: "Questionnaire results",
-        text: JSON.stringify(localStorage),
-      };
-  
-      transporter.sendMail(options, function (err, info){
-        if (err) {
-          console.log(err);
-          return;
-        }
-        console.log("Sent: " + info.response);
-      });
-    });
-  }
+const nodemailer = require('nodemailer');
 
-sendEmailWithQuestionnaireResults();
+function sendEmailWithQuestionnaireResults() {
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'benosgeorg13@gmail.com',
+      pass: 'bpvfjwxsgqylmzsw',
+    },
+  });
+
+  const options = {
+    from: 'benosgeorg13@gmail.com',
+    to: 'benos.geo@gmail.com',
+    subject: 'Questionnaire results',
+    text: 'This is the email content.',
+  };
+
+  transporter.sendMail(options, (err, info) => {
+    if (err) {
+      console.error('Error sending email:', err);
+    } else {
+      console.log('Email sent:', info.response);
+    }
+  });
+}
+
+module.exports = {
+  sendEmailWithQuestionnaireResults,
+};
