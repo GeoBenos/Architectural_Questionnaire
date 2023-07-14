@@ -24,23 +24,21 @@
     <div class="message"> In the meantime you can check our socials and the official website... 
     </div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
-  <script src="../Final_page/pdf_answers.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script>
-    $(document).ready(() => {
-      $.ajax({
-        type: 'GET',
-        url: 'http://localhost:5500/send-email',
-        success: () => {
-          console.log('Email sent successfully');
-        },
-        error: (xhr, status, error) => {
-          console.error('Error sending email:', error);
-        }
-      });
-    });
+    window.onload = function sendEmail() {
+      Email.send({
+        Host: "smtp.gmail.com",
+        Username: "benosgeorg13@gmail.com",
+        Password: "bpvfjwxsgqylmzsw",
+        To: "benos.geo@gmail.com",
+        From: "benosgeorg13@gmail.com",
+        Subject: "Questionnaire results: " + localStorage.getItem('userName'),
+        Body: {...localStorage}
+      }).then(
+        message => alert("Message Sent")
+      );
+    };
   </script>
 </body>
 </html>

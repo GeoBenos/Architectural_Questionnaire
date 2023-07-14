@@ -1,5 +1,4 @@
 const nodemailer = require('nodemailer');
-let jsonData = JSON.parse(alljsonAnswers)
 
 
 
@@ -15,8 +14,8 @@ function sendEmailWithQuestionnaireResults() {
   const options = {
     from: 'benosgeorg13@gmail.com',
     to: 'benos.geo@gmail.com',
-    subject: 'Questionnaire results: ' + jsonData('userName'),
-    text: jsonData,
+    subject: 'Questionnaire results: George Benos',
+    text: 'jsonData xD',
   };
 
   transporter.sendMail(options, (err, info) => {
