@@ -23,21 +23,72 @@
     </div>
     <div class="message"> In the meantime you can check our socials and the official website... 
     </div>
+    <!-- This is the questionnaire container -->
+    <div id="questionnaire-container" style="display: none;"></div>
   </div>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script>
-    window.onload = function sendEmail() {
+    
+
+    function reorderQuestionnaireResults(jsonData) {
+      if (!jsonData) return {}; // Return an empty object if jsonData is null
+      const sortedKeys = Object.keys(jsonData).sort((a, b) => {
+        const pageA = parseInt(a.match(/\d+/)[0]);
+        const pageB = parseInt(b.match(/\d+/)[0]);
+        return pageA - pageB;
+      });
+
+      const reorderedJSON = {};
+      sortedKeys.forEach((key) => {
+        reorderedJSON[key] = jsonData[key];
+      });
+
+      return reorderedJSON;
+    };
+
+    function createQuestionnaireHTML(data) {
+      const container = document.getElementById('questionnaire-container');
+      let html = '';
+
+      Object.keys(data).forEach((pageKey) => {
+        html += `<div class="page">`;
+
+        // Properly escape control characters before parsing JSON data
+        const pageData = JSON.parse(data[pageKey].replace(/\\n/g, '\\n').replace(/\\"/g, '\\"'));
+        Object.keys(pageData).forEach((questionKey) => {
+          const question = questionKey;
+          const answer = pageData[questionKey];
+
+          html += `<div class="question">${question}</div>`;
+          html += `<div class="answer">${answer}</div>`;
+        });
+
+        html += `</div>`;
+      });
+
+      container.innerHTML = html;
+    }
+
+    window.onload = function () {
+      const userName = localStorage.getItem('userName');
+      localStorage.removeItem('userName');
+      localStorage.removeItem('selectedValue');
+
+      const questionnaire_results = localStorage;
+      const reorderedResults = reorderQuestionnaireResults(questionnaire_results);
+      createQuestionnaireHTML(reorderedResults);
+      const emailBody = document.getElementById('questionnaire-container').innerHTML;
+
       Email.send({
-        Host: "smtp.gmail.com",
-        Username: "benosgeorg13@gmail.com",
-        Password: "bpvfjwxsgqylmzsw",
+        Host: "smtp.elasticemail.com",
+        Username: "benos.geo@gmail.com",
+        Password: "D35608AE8E5D26084ACDA437A5368C28D508",
         To: "benos.geo@gmail.com",
-        From: "benosgeorg13@gmail.com",
-        Subject: "Questionnaire results: " + localStorage.getItem('userName'),
-        Body: {...localStorage}
-      }).then(
-        message => alert("Message Sent")
-      );
+        From: "benos.geo@gmail.com",
+        Subject: "Questionnaire results: " + userName,
+        Body: emailBody,
+        Mime: "text/html"
+      });
     };
   </script>
 </body>
