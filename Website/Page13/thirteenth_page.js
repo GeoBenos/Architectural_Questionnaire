@@ -11,45 +11,50 @@ document.addEventListener('DOMContentLoaded', function() {
   document.documentElement.style.scrollBehavior = 'smooth';
 
 
-  let pageThirteenAnswers = {}; // Define pageThirteenAnswers variable in the outer scope
+  let page13Answers = {}; // Define pageThirteenAnswers variable in the outer scope
   const nextPageButton = document.getElementById('nextPage');
-
+  
   function SaveUserAnswers() {
-    pageThirteenAnswers = {};
+    page13Answers = {};
     var thirteenthPageTitle = document.querySelector('.thirteen_page_title').innerText.trim();
 
-    selectedPictures_thirteenth_page = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
-    const selectedNames = selectedPictures_thirteenth_page.map(picture => picture.querySelector('.text').innerText.trim());
+    selectedPictures = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
+    const selectedNames = selectedPictures.map(picture => picture.querySelector('.text').innerText.trim());
+    const selectedURL = selectedPictures.map(picture => picture.querySelector('img').src);
     console.log(selectedNames);
-    console.log(selectedPictures_thirteenth_page);
-    selectedNames.forEach(function(name, index) {
-      pageThirteenAnswers[thirteenthPageTitle + ': user clicked images' + (index + 1)] = name;
+    console.log(selectedPictures);
+
+    page13Answers[thirteenthPageTitle] = selectedNames;
+ 
+
+    selectedURL.forEach(function(url, index) {
+      page13Answers['Picture No. ' + (index + 1)] = url;
     });
 
     var answerInput = document.getElementById('inputField');
     var userInput = answerInput.value.trim();
 
     if (userInput !== "") {
-      pageThirteenAnswers[thirteenthPageTitle + ': user input'] = userInput;
+      page13Answers[thirteenthPageTitle + ': user input'] = userInput;
     }
 
-    var jsonAnswers = JSON.stringify(pageThirteenAnswers);
+    var jsonAnswers = JSON.stringify(page13Answers);
     localStorage.setItem('Page 13 answers', jsonAnswers);
     console.log(jsonAnswers);
   }
 
   function UserInput() {
-    pageThirteenAnswers={}
+    page13Answers={}
     var thirteenthPageTitle = document.querySelector('.thirteen_page_title').innerText.trim();
 
     var answerInput = document.getElementById('inputField');
     var userInput = answerInput.value.trim();
 
     if (userInput !== "") {
-      pageThirteenAnswers[thirteenthPageTitle + ': user input'] = userInput;
+      page13Answers[thirteenthPageTitle + ': user input'] = userInput;
     }
 
-    var jsonAnswers = JSON.stringify(pageThirteenAnswers);
+    var jsonAnswers = JSON.stringify(page13Answers);
     localStorage.setItem('Page 12 answers', jsonAnswers);
     console.log(jsonAnswers);
   }

@@ -10,29 +10,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.documentElement.style.scrollBehavior = 'smooth';
 
-  let pageNineAnswers = {}; // Define pageNineAnswers variable in the outer scope
+  let page9Answers = {}; // Define pageNineAnswers variable in the outer scope
   const nextPageButton = document.getElementById('nextPage');
 
   function SaveUserAnswers() {
-    pageNineAnswers = {}
+    page9Answers = {}
     var ninthPageTitle = document.querySelector('.ninth_page_title').innerText.trim();
 
-    selectedPictures_ninth_page = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
-    const selectedNames = selectedPictures_ninth_page.map(picture => picture.querySelector('.text').innerText.trim());
+    selectedPictures_twelveth_page = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
+    const selectedNames = selectedPictures_twelveth_page.map(picture => picture.querySelector('.text').innerText.trim());
+    const selectedURL = selectedPictures_twelveth_page.map(picture => picture.querySelector('img').src);
     console.log(selectedNames);
-    console.log(selectedPictures_ninth_page);
-    selectedNames.forEach(function(name, index) {
-      pageNineAnswers[ninthPageTitle + ' user clicked image ' + (index+1) ] = name;
+    console.log(selectedPictures_twelveth_page);
+
+    page9Answers[ninthPageTitle] = selectedNames;
+
+    selectedURL.forEach(function(url, index) {
+      page9Answers['Picture No. ' + (index + 1)] = url;
     });
 
     var answerInput = document.getElementById('inputField');
     var userInput = answerInput.value.trim();
 
     if (userInput !== "") {
-      pageNineAnswers[ninthPageTitle + ': user input'] = userInput;
+      page9Answers[ninthPageTitle + ': user input'] = userInput;
     }
 
-    var jsonAnswers = JSON.stringify(pageNineAnswers);
+    var jsonAnswers = JSON.stringify(page9Answers);
     localStorage.setItem('Page 9 answers', jsonAnswers);
     console.log(jsonAnswers);
   }
@@ -44,10 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var userInput = answerInput.value.trim();
 
     if (userInput !== "") {
-      pageNineAnswers[ninthPageTitle + ': user input'] = userInput;
+      page9Answers[ninthPageTitle + ': user input'] = userInput;
     }
 
-    var jsonAnswers = JSON.stringify(pageNineAnswers);
+    var jsonAnswers = JSON.stringify(page9Answers);
     localStorage.setItem('Page 9 answers', jsonAnswers);
     console.log(jsonAnswers);
   }

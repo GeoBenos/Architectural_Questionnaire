@@ -8,16 +8,16 @@ document.addEventListener('DOMContentLoaded', function() {
     progress.style.width = progressPercentage + "%";
 
     function SaveUserAnswers(value) {
-      var pageEightAnswers = {};
+      var page8Answers = {};
     
       // Get the fifth_page_title element
       var eighthPageTitle = document.querySelector('.eighth_page_question').innerText.trim();
   
-      pageEightAnswers[eighthPageTitle+" "] = value
+      page8Answers[eighthPageTitle+" "] = value
   
     
       // Convert the userAnswers object to JSON
-      var jsonAnswers = JSON.stringify(pageEightAnswers);
+      var jsonAnswers = JSON.stringify(page8Answers);
     
       // Store the JSON data in the localStorage
       localStorage.setItem('page 8 answers', jsonAnswers);

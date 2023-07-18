@@ -11,29 +11,33 @@ document.addEventListener('DOMContentLoaded', function() {
     document.documentElement.style.scrollBehavior = 'smooth';
   
 
-    let pageTwelveAnswers = {}; // Define pageNineAnswers variable in the outer scope
+    let page12Answers = {}; // Define pageNineAnswers variable in the outer scope
     const nextPageButton = document.getElementById('nextPage');
   
     function SaveUserAnswers() {
-      pageTwelveAnswers = {};
+      page12Answers = {};
       var twelvthPageTitle = document.querySelector('.twelvth_page_title').innerText.trim();
   
       selectedPictures_twelveth_page = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
       const selectedNames = selectedPictures_twelveth_page.map(picture => picture.querySelector('.text').innerText.trim());
+      const selectedURL = selectedPictures_twelveth_page.map(picture => picture.querySelector('img').src);
       console.log(selectedNames);
       console.log(selectedPictures_twelveth_page);
-      selectedNames.forEach(function(name, index) {
-        pageTwelveAnswers[twelvthPageTitle + ': user clicked images' + (index + 1)] = name;
+
+      page12Answers[twelvthPageTitle] = selectedNames;
+
+      selectedURL.forEach(function(url, index) {
+        page12Answers['Picture_Url No. ' + (index + 1)] = url;
       });
-  
+
       var answerInput = document.getElementById('inputField');
       var userInput = answerInput.value.trim();
   
       if (userInput !== "") {
-        pageTwelveAnswers[twelvthPageTitle + ': user input'] = userInput;
+        page12Answers[twelvthPageTitle + ': user input'] = userInput;
       }
   
-      var jsonAnswers = JSON.stringify(pageTwelveAnswers);
+      var jsonAnswers = JSON.stringify(page12Answers);
       localStorage.setItem('Page 12 answers', jsonAnswers);
       console.log(jsonAnswers);
     }
@@ -45,10 +49,10 @@ document.addEventListener('DOMContentLoaded', function() {
       var userInput = answerInput.value.trim();
   
       if (userInput !== "") {
-        pageTwelveAnswers[ninthPageTitle + ': user input'] = userInput;
+        page12Answers[ninthPageTitle + ': user input'] = userInput;
       }
   
-      var jsonAnswers = JSON.stringify(pageTwelveAnswers);
+      var jsonAnswers = JSON.stringify(page12Answers);
       localStorage.setItem('Page 12 answers', jsonAnswers);
       console.log(jsonAnswers);
     }

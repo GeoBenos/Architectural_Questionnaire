@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   progress.style.width = progressPercentage + "%";
 
+  console.log(localStorage);
+
   function SaveUserAnswers(value) {
     var page3Answers = {};
   

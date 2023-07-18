@@ -18,10 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     selectedPictures_twelveth_page = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
     const selectedNames = selectedPictures_twelveth_page.map(picture => picture.querySelector('.text').innerText.trim());
+    const selectedURL = selectedPictures_twelveth_page.map(picture => picture.querySelector('img').src);
     console.log(selectedNames);
     console.log(selectedPictures_twelveth_page);
-    selectedNames.forEach(function(name, index) {
-      page24Answers[page24title + ': user clicked images ' + (index + 1)] = name;
+    
+      page24Answers[page24title] = selectedNames
+
+    selectedURL.forEach(function(url, index) {
+      page24Answers['Picture No.' + (index + 1)] = url;
     });
 
     var jsonAnswers = JSON.stringify(page24Answers);

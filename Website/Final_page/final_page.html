@@ -21,7 +21,7 @@
         <a class="fa fa-facebook" href="https://www.facebook.com/people/Siaini-Architecture/100090058393762/" target="_blank">
         </a> 
     </div>
-    <div class="message"> In the meantime you can check our socials and the official website... 
+    <div class="message"> In the meantime you can check out our socials and the official website... 
     </div>
     <!-- This is the questionnaire container -->
     <div id="questionnaire-container" style="display: none;"></div>
@@ -47,38 +47,66 @@
     };
 
     function createQuestionnaireHTML(data) {
-      const container = document.getElementById('questionnaire-container');
-      let html = '';
+  const container = document.getElementById('questionnaire-container');
+  let html = '';
 
-      Object.keys(data).forEach((pageKey) => {
-        html += `<div class="page">`;
+  // Helper function to check if a string is a URL
+  function isURL(str) {
+    const pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+      '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+      '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+      '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+    return pattern.test(str);
+  }
 
-        // Properly escape control characters before parsing JSON data
-        const pageData = JSON.parse(data[pageKey].replace(/\\n/g, '\\n').replace(/\\"/g, '\\"'));
-        Object.keys(pageData).forEach((questionKey) => {
-          const question = questionKey;
-          const answer = pageData[questionKey];
+  html += '<div class="page">';
+  Object.keys(data).forEach((pageKey) => {
+    const pageData = JSON.parse(data[pageKey]);
+    Object.keys(pageData).forEach((questionKey) => {
+      const question = questionKey;
+      let answers;
+      if (Array.isArray(pageData[questionKey])) {
+        answers = pageData[questionKey].join(', ');
+      } else {
+        answers = pageData[questionKey];
+      }
 
-          html += `<div class="question">${question}</div>`;
-          html += `<div class="answer">${answer}</div>`;
+      // Check for images in the answers and add image elements
+      const images = Array.isArray(pageData[questionKey]) ? pageData[questionKey].filter((answer) => isURL(answer)) : [];
+      if (images.length > 0) {
+        html += '<div class="image-container">';
+        images.forEach((imageUrl) => {
+          html += `<img class="answer-image" src="${imageUrl}" alt="Answer Image" style="height: 250px;">`;
         });
+        html += '</div>';
+      }
 
-        html += `</div>`;
-      });
+      // Format the question and answers as per the desired format
+      html += `<div class="question" style="font-family: Roboto, sans-serif; font-weight: bold; font-size: 18px;">${question}</div>`;
+      html += `<div class="answers" style="font-family: Roboto, sans-serif; font-size: 18px;">${answers}</div>`;
+    });
+  });
+  html += '</div>';
 
-      container.innerHTML = html;
-    }
+  container.innerHTML = html;
+  return html;
+}
+
+
 
     window.onload = function () {
+      console.log(localStorage);
       const userName = localStorage.getItem('userName');
       localStorage.removeItem('userName');
       localStorage.removeItem('selectedValue');
 
       const questionnaire_results = localStorage;
       const reorderedResults = reorderQuestionnaireResults(questionnaire_results);
-      createQuestionnaireHTML(reorderedResults);
-      const emailBody = document.getElementById('questionnaire-container').innerHTML;
-
+      console.log(reorderedResults);
+      const emailBody = createQuestionnaireHTML(reorderedResults);
+      console.log(emailBody);
       Email.send({
         Host: "smtp.elasticemail.com",
         Username: "benos.geo@gmail.com",

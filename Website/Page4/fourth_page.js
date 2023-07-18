@@ -14,28 +14,32 @@ document.addEventListener('DOMContentLoaded', function() {
   document.documentElement.style.scrollBehavior = 'smooth';
 
   function SaveUserAnswers() {
-    var pageFourAnswers = {};
+    var page4Answers = {};
   
     // Get the fourth_page_title element
     var fourthPageTitle = document.querySelector('.fourth_page_title').innerText.trim();
 
-    selectedPictures_fourth_page = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
-    const selectedNames = selectedPictures_fourth_page.map(picture => picture.querySelector('.text').innerText.trim());
+    selectedPictures = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
+    const selectedNames = selectedPictures.map(picture => picture.querySelector('.text').innerText.trim());
+    const selectedURL = selectedPictures.map(picture => picture.querySelector('img').src);
     console.log(selectedNames)
-    console.log(selectedPictures_fourth_page);
-    selectedNames.forEach(function(name, index) {
-      pageFourAnswers[fourthPageTitle + ': answer' + (index + 1)] = name;
+    console.log(selectedPictures);
+
+    page4Answers[fourthPageTitle] = selectedNames;
+
+    selectedURL.forEach(function(url, index) {
+      page4Answers['Picture No. ' + (index + 1)] = url;
     });
-  
+
     // Convert the userAnswers object to JSON
-    var jsonAnswers = JSON.stringify(pageFourAnswers);
+    var jsonAnswers = JSON.stringify(page4Answers);
   
     // Store the JSON data in the localStorage
     localStorage.setItem('Page 4 answers', jsonAnswers);
     console.log(jsonAnswers);
   }
 
-  let selectedPictures_fourth_page = [];
+  let selectedPictures = [];
   pictures.forEach(function(picture) {
     const checkmark = picture.querySelector('.checkmark')
     
@@ -44,25 +48,25 @@ document.addEventListener('DOMContentLoaded', function() {
       if (picture.classList.contains('selected')) {
         picture.classList.remove('selected');
         checkmark.classList.toggle('show')
-        const index = selectedPictures_fourth_page.indexOf(picture);
+        const index = selectedPictures.indexOf(picture);
         if (index !== -1) {
-          selectedPictures_fourth_page.splice(index, 1);
+          selectedPictures.splice(index, 1);
         }
       } else {
-        if (selectedPictures_fourth_page.length < 2) {
+        if (selectedPictures.length < 2) {
           picture.classList.add('selected');
-          selectedPictures_fourth_page.push(picture);
+          selectedPictures.push(picture);
           checkmark.classList.toggle('show');
         } else {
           checkmark.classList.remove('show ')
-          const firstSelected = selectedPictures_fourth_page.shift();
+          const firstSelected = selectedPictures.shift();
           firstSelected.classList.remove('selected');
-          const index = selectedPictures_fourth_page.indexOf(firstSelected);
+          const index = selectedPictures.indexOf(firstSelected);
           if (index !== -1) {
-            selectedPictures_fourth_page.splice(index, 1);
+            selectedPictures.splice(index, 1);
           }
           picture.classList.add('selected');
-          selectedPictures_fourth_page.push(picture);
+          selectedPictures.push(picture);
         }
       }
       SaveUserAnswers();

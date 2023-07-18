@@ -17,10 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let selectedPictures_twelveth_page = [];
     selectedPictures_twelveth_page = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
     const selectedNames = selectedPictures_twelveth_page.map(picture => picture.querySelector('.text').innerText.trim());
+    const selectedURL = selectedPictures_twelveth_page.map(picture => picture.querySelector('img').src);
     console.log(selectedNames);
     console.log(selectedPictures_twelveth_page);
-    selectedNames.forEach(function(name, index) {
-      page27Answers[page27title + ': user clicked images ' + (index + 1)] = name;
+
+      page27Answers[page27title] = selectedNames
+
+    selectedURL.forEach(function(url, index) {
+      page27Answers['Picture No. ' + (index + 1)] = url;
     });
 
     var jsonAnswers = JSON.stringify(page27Answers);

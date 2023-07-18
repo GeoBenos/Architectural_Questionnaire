@@ -13,21 +13,26 @@ document.addEventListener('DOMContentLoaded', function() {
   
     document.documentElement.style.scrollBehavior = 'smooth';
 
-    let pageSixteenAnswers = {};
+    let page16Answers = {};
 
     function SaveUserAnswers() {
-      pageSixteenAnswers = {};
+      page16Answers = {};
       var sixteenPageTitle = document.querySelector('.sixteen_page_question').innerText.trim();
   
-      selectedPictures_sixteenth_page = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
-      const selectedNames = selectedPictures_sixteenth_page.map(picture => picture.querySelector('.text').innerText.trim());
+      selectedPictures = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
+      const selectedNames = selectedPictures.map(picture => picture.querySelector('.text').innerText.trim());
+      const selectedURL = selectedPictures.map(picture => picture.querySelector('img').src);
       console.log(selectedNames);
-      console.log(selectedPictures_sixteenth_page);
-      selectedNames.forEach(function(name, index) {
-        pageSixteenAnswers[sixteenPageTitle + ': user clicked images No.' + (index + 1)] = name;
-      });
+      console.log(selectedPictures);
+
+      page16Answers[sixteenPageTitle] =  selectedNames;
+
+
+      selectedURL.forEach(function(url, index) {
+        page16Answers['Picture No. ' + (index + 1)] = url;
+      })
   
-      var jsonAnswers = JSON.stringify(pageSixteenAnswers);
+      var jsonAnswers = JSON.stringify(page16Answers);
       localStorage.setItem('Page 16 answers', jsonAnswers);
       console.log(jsonAnswers);
     }

@@ -17,12 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
     page2Answers = {};
     var page2Title = document.querySelector('.second_page_question').innerText.trim();
 
+    let selectedPictures_twelveth_page = [];
     selectedPictures_twelveth_page = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
     const selectedNames = selectedPictures_twelveth_page.map(picture => picture.querySelector('.text').innerText.trim());
+    const selectedURL = selectedPictures_twelveth_page.map(picture => picture.querySelector('img').src);
     console.log(selectedNames);
     console.log(selectedPictures_twelveth_page);
-    selectedNames.forEach(function(name, index) {
-      page2Answers[page2Title + ': user clicked images' + (index + 1)] = name;
+    page2Answers[page2Title] = selectedNames;
+
+    selectedURL.forEach(function(url, index) {
+      page2Answers['Picture No. ' + (index + 1)] = url;
     });
 
     var jsonAnswers = JSON.stringify(page2Answers);

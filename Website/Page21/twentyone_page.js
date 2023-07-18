@@ -17,12 +17,15 @@ document.addEventListener('DOMContentLoaded', function() {
       page21Answers = {};
       var page21Title = document.querySelector('.twentyone_page_question').innerText.trim();
   
-      selectedPictures_thirteenth_page = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
-      const selectedNames = selectedPictures_thirteenth_page.map(picture => picture.querySelector('.text').innerText.trim());
+      selectedPictures = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
+      const selectedNames = selectedPictures.map(picture => picture.querySelector('.text').innerText.trim());
+      const selectedURL = selectedPictures.map(picture => picture.querySelector('img').src);
       console.log(selectedNames);
-      console.log(selectedPictures_thirteenth_page);
-      selectedNames.forEach(function(name, index) {
-        page21Answers[page21Title + ': user clicked images' + (index + 1)] = name;
+      console.log(selectedPictures);
+        page21Answers[page21Title] = selectedNames;
+
+      selectedURL.forEach(function(url, index) {
+        page21Answers['Picture No.' + (index + 1)] = url;
       });
   
       var answerInput = document.getElementById('inputField');

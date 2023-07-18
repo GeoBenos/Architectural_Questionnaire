@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
   choices.forEach(function(choice) {
     choice.addEventListener('click', function() {
       const selectedValue = this.value;
-      localStorage.setItem('selectedValue', selectedValue);
       console.log("Selected value in Page 5: " + selectedValue);
       SaveUserAnswers(selectedValue);
       setTimeout(() => {

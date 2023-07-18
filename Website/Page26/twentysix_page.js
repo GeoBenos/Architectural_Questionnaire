@@ -17,11 +17,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     selectedPictures_twelveth_page = Array.from(pictures).filter(picture => picture.classList.contains('selected'));
     const selectedNames = selectedPictures_twelveth_page.map(picture => picture.querySelector('.text').innerText.trim());
+    const selectedURL = selectedPictures_twelveth_page.map(picture => picture.querySelector('img').src);
     console.log(selectedNames);
     console.log(selectedPictures_twelveth_page);
-    selectedNames.forEach(function(name, index) {
-      page26Answers[page26title + ': user clicked images ' + (index + 1)] = name;
-    });
+    
+      page26Answers[page26title] = selectedNames;
+
+    selectedURL.forEach(function(url, index) {
+      page26Answers['Picture No. ' + (index + 1)] = url;
+    })
 
     var jsonAnswers = JSON.stringify(page26Answers);
     localStorage.setItem('Page 26 answers', jsonAnswers);
