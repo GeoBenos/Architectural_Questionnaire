@@ -78,9 +78,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-George Benos - [@linkedin_handle](https://twitter.com/twitter_handle) - benos.geo@gmail.com
+George Benos - benos.geo@gmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
