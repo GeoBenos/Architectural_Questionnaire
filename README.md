@@ -11,7 +11,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![MIT License][license-shield]](https://opensource.org/licenses/MIT)
+![license-shield](https://img.shields.io/github/license/GeoBenos/Questionnaire_website.svg?style=for-the-badge)
 [![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/george-benos-4b87a3234)
 
 
@@ -78,9 +78,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-George Benos - [@linkedin_handle](https://twitter.com/twitter_handle) - benos.geo@gmail.com
+George Benos - benos.geo@gmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
