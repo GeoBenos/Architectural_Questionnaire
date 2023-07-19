@@ -65,27 +65,19 @@
   Object.keys(data).forEach((pageKey) => {
     const pageData = JSON.parse(data[pageKey]);
     Object.keys(pageData).forEach((questionKey) => {
-      const question = questionKey;
-      let answers;
-      if (Array.isArray(pageData[questionKey])) {
-        answers = pageData[questionKey].join(', ');
-      } else {
-        answers = pageData[questionKey];
-      }
-
-      // Check for images in the answers and add image elements
-      const images = Array.isArray(pageData[questionKey]) ? pageData[questionKey].filter((answer) => isURL(answer)) : [];
-      if (images.length > 0) {
+      const value = pageData[questionKey];
+      if (isURL(value)) {
+        // Handle images separately if it's a URL
         html += '<div class="image-container">';
-        images.forEach((imageUrl) => {
-          html += `<img class="answer-image" src="${imageUrl}" alt="Answer Image" style="height: 250px;">`;
-        });
+        html += `<img class="answer-image" src="${value}" alt="Answer Image" style="height: 250px;">`;
         html += '</div>';
+      } else {
+        // Format the question and answers as per the desired format
+        const question = questionKey;
+        const answers = Array.isArray(value) ? value.join(', ') : value;
+        html += `<div class="question" style="font-family: Roboto, sans-serif; font-weight: bold; font-size: 18px;">${question}</div>`;
+        html += `<div class="answers" style="font-family: Roboto, sans-serif; font-size: 18px;">${answers}</div>`;
       }
-
-      // Format the question and answers as per the desired format
-      html += `<div class="question" style="font-family: Roboto, sans-serif; font-weight: bold; font-size: 18px;">${question}</div>`;
-      html += `<div class="answers" style="font-family: Roboto, sans-serif; font-size: 18px;">${answers}</div>`;
     });
   });
   html += '</div>';
@@ -108,11 +100,11 @@
       const emailBody = createQuestionnaireHTML(reorderedResults);
       console.log(emailBody);
       Email.send({
-        Host: "smtp.elasticemail.com",
-        Username: "benos.geo@gmail.com",
-        Password: "D35608AE8E5D26084ACDA437A5368C28D508",
-        To: "benos.geo@gmail.com",
-        From: "benos.geo@gmail.com",
+        Host: "insert host here",
+        Username: "user name here",
+        Password: "password here",
+        To: "to",
+        From: "from",
         Subject: "Questionnaire results: " + userName,
         Body: emailBody,
         Mime: "text/html"
